@@ -1,0 +1,5385 @@
+	.xmtGlob new_edges 12042060 3785696 	# Inserted by XMTCLinker
+	.xmtGlob low 27394416 157176 	# Inserted by XMTCLinker
+	.xmtGlob high 27551592 157176 	# Inserted by XMTCLinker
+	.xmtGlob antiparallel 3959512 1892848 	# Inserted by XMTCLinker
+	.xmtGlob T_comp 10149212 1892848 	# Inserted by XMTCLinker
+	.xmtGlob vertices_dim0_size 121408 4 	# Inserted by XMTCLinker
+	.xmtGlob edges_dim0_size 3959504 4 	# Inserted by XMTCLinker
+	.xmtGlob degrees 121412 52392 	# Inserted by XMTCLinker
+	.xmtGlob __xmtio_buffer 7745216 458752 	# Inserted by XMTCLinker
+	.xmtGlob preorder 25396784 52392 	# Inserted by XMTCLinker
+	.xmtGlob antiparallel_dim0_size 5852360 4 	# Inserted by XMTCLinker
+	.xmtGlob parent 25344392 52392 	# Inserted by XMTCLinker
+	.xmtGlob bcc 5852364 1892848 	# Inserted by XMTCLinker
+	.xmtGlob size_subtree 25449176 52392 	# Inserted by XMTCLinker
+	.xmtGlob edges_idx 25501568 1892848 	# Inserted by XMTCLinker
+	.xmtGlob next_D_2 19665848 1892848 	# Inserted by XMTCLinker
+	.xmtGlob new_M 15827756 4 	# Inserted by XMTCLinker
+	.xmtGlob next_D_1 17773000 1892848 	# Inserted by XMTCLinker
+	.xmtGlob new_antiparallel 15880152 1892848 	# Inserted by XMTCLinker
+	.xmtGlob edges_dim1_size 3959508 4 	# Inserted by XMTCLinker
+	.xmtGlob __xmt_global_sp 8203968 4 	# Inserted by XMTCLinker
+	.xmtGlob R 21558696 1892848 	# Inserted by XMTCLinker
+	.xmtGlob new_vertices 15827760 52392 	# Inserted by XMTCLinker
+	.xmtGlob dir 23451544 1892848 	# Inserted by XMTCLinker
+	.xmtGlob edges 173808 3785696 	# Inserted by XMTCLinker
+	.xmtGlob T 8256364 1892848 	# Inserted by XMTCLinker
+	.xmtGlob aux_high 27865944 157176 	# Inserted by XMTCLinker
+	.xmtGlob bcc_dim0_size 7745212 4 	# Inserted by XMTCLinker
+	.xmtGlob aux_low 27708768 157176 	# Inserted by XMTCLinker
+	.xmtGlob vertices 69016 52392 	# Inserted by XMTCLinker
+	.xmtGlob degrees_dim0_size 173804 4 	# Inserted by XMTCLinker
+	.xmtGlob D 8203972 52392 	# Inserted by XMTCLinker
+	.stackinit 0x3ffffffc
+	lui $29 , 0x3fff
+	addi $29 , $29 , 0xfffc
+	jal _xmt_check_ntcus
+	jal main
+	halt
+	.file	1 "xmtio.cil.c"
+	.section .mdebug.abi32
+	.previous
+	.text
+	.align	2
+	.globl printCHAR
+	.ent printCHAR 
+ printCHAR :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	lui $2 , 1 # li expansion: li $2 , 65536
+	ori $2 , $2 , 0
+	ori $2 , $2 , 49150
+	slt $6 , $2 , $5
+	bltz $5 , $L5
+	sll $3 , $5 , 2
+	lui $2 , 118 # la expansion: la $2 , __xmtio_buffer + 4
+	ori $2 , $2 , 11972
+	addu $3 , $3 , $2
+	bne $6 , $0 , $L5
+	sw $4 , 0 ( $3 )
+$L5 :
+	jr $31 # Returning from frunction printCHAR
+	.end printCHAR 
+ 	.size	printCHAR, .-printCHAR
+	.align	2
+	.globl __parallel_printCHAR
+	.size	__parallel_printCHAR, .-__parallel_printCHAR
+	.align	2
+	.globl printINT
+	.ent printINT 
+ printINT :
+	.frame $29 , 40 , $31 # vars= 0, regs= 6/0, args= 16, gp= 0
+	.mask	0x801f0000,-4
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 40
+	sw $31 , 36 ( $29 )
+	sw $20 , 32 ( $29 )
+	sw $19 , 28 ( $29 )
+	sw $18 , 24 ( $29 )
+	sw $17 , 20 ( $29 )
+	sw $16 , 16 ( $29 )
+	add $17 , $4 , $0 # expanded move: move $17 , $4
+	add $18 , $5 , $0 # expanded move: move $18 , $5
+	bltz $4 , $L13
+	add $19 , $0 , $0 # expanded move: move $19 , $0
+$L15 :
+	addi $16 , $0 , 1 # li expansion: li $16 , 1
+	j $L16
+$L13 :
+	bltz $5 , $L17
+	addi $4 , $0 , 45 # li expansion: li $4 , 45
+	jal printCHAR
+	addiu $18 , $18 , 1
+$L17 :
+	subu $17 , $0 , $17
+	addi $19 , $0 , 1 # li expansion: li $19 , 1
+	j $L15
+$L19 :
+	addu $16 , $3 , $4
+$L16 :
+	div $17 , $16
+	mflo $2
+	sll $4 , $16 , 3
+	sll $3 , $16 , 1
+	slti $2 , $2 , 10
+	beq $2 , $0 , $L19
+	lui $2 , 26214 # li expansion: li $2 , 1717960704
+	ori $2 , $2 , 0
+	ori $20 , $2 , 26215
+	j $L20
+$L21 :
+	addiu $19 , $19 , 1
+	bltz $18 , $L22
+	div $17 , $16
+	mflo $4
+	addiu $18 , $18 , 1
+	addiu $4 , $4 , 48
+	jal printCHAR
+$L22 :
+	mult $16 , $20
+	mfhi $2
+	sra $3 , $16 , 31
+	div $17 , $16
+	mfhi $17
+	sra $2 , $2 , 2
+	subu $16 , $2 , $3
+$L20 :
+	add $5 , $18 , $0 # expanded move: move $5 , $18
+	bgtz $16 , $L21
+	add $2 , $19 , $0 # expanded move: move $2 , $19
+	lw $31 , 36 ( $29 )
+	lw $20 , 32 ( $29 )
+	lw $19 , 28 ( $29 )
+	lw $18 , 24 ( $29 )
+	lw $17 , 20 ( $29 )
+	lw $16 , 16 ( $29 )
+	addiu $29 , $29 , 40
+	jr $31 # Returning from frunction printINT
+	.end printINT 
+ 	.size	printINT, .-printINT
+	.align	2
+	.globl __parallel_printINT
+	.size	__parallel_printINT, .-__parallel_printINT
+	.align	2
+	.globl printSTR
+	.ent printSTR 
+ printSTR :
+	.frame $29 , 32 , $31 # vars= 0, regs= 4/0, args= 16, gp= 0
+	.mask	0x80070000,-4
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 32
+	sw $31 , 28 ( $29 )
+	sw $18 , 24 ( $29 )
+	sw $17 , 20 ( $29 )
+	sw $16 , 16 ( $29 )
+	add $17 , $5 , $0 # expanded move: move $17 , $5
+	add $16 , $4 , $0 # expanded move: move $16 , $4
+	add $18 , $0 , $0 # expanded move: move $18 , $0
+	j $L51
+$L46 :
+	addiu $18 , $18 , 1
+	bltz $17 , $L51
+	jal printCHAR
+	addiu $17 , $17 , 1
+$L51 :
+	addi $2 , $16 , 0 # epxanded load instruction (start)
+	andi $27 , $2 , 3
+	xor $2 , $2 , $27
+	lw $2 , 0 ( $2 )
+	addi $26 , $0 , 24 # li expansion: li $26 , 24
+	sll $27 , $27 , 3
+	sub $27 , $26 , $27
+	sllv $2 , $2 , $27
+	srav $2 , $2 , $26 # epxanded load instruction (end)
+	add $5 , $17 , $0 # expanded move: move $5 , $17
+	add $4 , $2 , $0 # expanded move: move $4 , $2
+	addiu $16 , $16 , 1
+	bne $2 , $0 , $L46
+	add $2 , $18 , $0 # expanded move: move $2 , $18
+	lw $31 , 28 ( $29 )
+	lw $18 , 24 ( $29 )
+	lw $17 , 20 ( $29 )
+	lw $16 , 16 ( $29 )
+	addiu $29 , $29 , 32
+	jr $31 # Returning from frunction printSTR
+	.end printSTR 
+ 	.size	printSTR, .-printSTR
+	.align	2
+	.globl __parallel_printSTR
+	.size	__parallel_printSTR, .-__parallel_printSTR
+	.align	2
+	.globl printf_internal
+	.ent printf_internal 
+ printf_internal :
+	.frame $29 , 40 , $31 # vars= 0, regs= 6/0, args= 16, gp= 0
+	.mask	0x801f0000,-4
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 40
+	sw $31 , 36 ( $29 )
+	sw $20 , 32 ( $29 )
+	sw $19 , 28 ( $29 )
+	sw $18 , 24 ( $29 )
+	sw $17 , 20 ( $29 )
+	sw $16 , 16 ( $29 )
+	add $16 , $4 , $0 # expanded move: move $16 , $4
+	add $20 , $5 , $0 # expanded move: move $20 , $5
+	add $19 , $6 , $0 # expanded move: move $19 , $6
+	add $18 , $0 , $0 # expanded move: move $18 , $0
+	add $17 , $0 , $0 # expanded move: move $17 , $0
+	j $L65
+$L66 :
+	addi $2 , $0 , 37 # li expansion: li $2 , 37
+	bne $4 , $2 , $L87
+	addiu $17 , $17 , 1
+	addu $2 , $20 , $17
+	addi $3 , $2 , 0 # epxanded load instruction (start)
+	andi $27 , $3 , 3
+	xor $3 , $3 , $27
+	lw $3 , 0 ( $3 )
+	addi $26 , $0 , 24 # li expansion: li $26 , 24
+	sll $27 , $27 , 3
+	sub $27 , $26 , $27
+	sllv $3 , $3 , $27
+	srav $3 , $3 , $26 # epxanded load instruction (end)
+	addi $2 , $0 , 100 # li expansion: li $2 , 100
+	beq $3 , $2 , $L74
+	slti $2 , $3 , 101
+	beq $2 , $0 , $L76
+	beq $3 , $4 , $L72
+	addi $2 , $0 , 99 # li expansion: li $2 , 99
+	bne $3 , $2 , $L71
+	j $L88
+$L76 :
+	addi $2 , $0 , 115 # li expansion: li $2 , 115
+	bne $3 , $2 , $L71
+	j $L89
+$L74 :
+	lw $4 , 0 ( $19 )
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	jal printINT
+	addiu $19 , $19 , 4
+	addu $18 , $18 , $2
+	bgez $16 , $L85
+	j $L71
+$L89 :
+	lw $4 , 0 ( $19 )
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	jal printSTR
+	addiu $19 , $19 , 4
+	addu $18 , $18 , $2
+	bltz $16 , $L71
+$L85 :
+	addu $16 , $16 , $2
+	j $L71
+$L88 :
+	lw $4 , 0 ( $19 )
+	addiu $19 , $19 , 4
+$L87 :
+	bltz $16 , $L81
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	jal printCHAR
+	addiu $16 , $16 , 1
+	j $L81
+$L72 :
+	bltz $16 , $L81
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	addi $4 , $0 , 37 # li expansion: li $4 , 37
+	jal printCHAR
+	addiu $16 , $16 , 1
+$L81 :
+	addiu $18 , $18 , 1
+$L71 :
+	addiu $17 , $17 , 1
+$L65 :
+	addu $2 , $17 , $20
+	addi $4 , $2 , 0 # epxanded load instruction (start)
+	andi $27 , $4 , 3
+	xor $4 , $4 , $27
+	lw $4 , 0 ( $4 )
+	addi $26 , $0 , 24 # li expansion: li $26 , 24
+	sll $27 , $27 , 3
+	sub $27 , $26 , $27
+	sllv $4 , $4 , $27
+	srav $4 , $4 , $26 # epxanded load instruction (end)
+	bne $4 , $0 , $L66
+	add $2 , $18 , $0 # expanded move: move $2 , $18
+	lw $31 , 36 ( $29 )
+	lw $20 , 32 ( $29 )
+	lw $19 , 28 ( $29 )
+	lw $18 , 24 ( $29 )
+	lw $17 , 20 ( $29 )
+	lw $16 , 16 ( $29 )
+	addiu $29 , $29 , 40
+	jr $31 # Returning from frunction printf_internal
+	.end printf_internal 
+ 	.size	printf_internal, .-printf_internal
+	.align	2
+	.globl __parallel_printf_internal
+	.size	__parallel_printf_internal, .-__parallel_printf_internal
+	.align	2
+	.globl printf
+	.ent printf 
+ printf :
+	.frame $29 , 40 , $31 # vars= 8, regs= 3/0, args= 16, gp= 0
+	.mask	0x80030000,-8
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 40
+	sw $31 , 32 ( $29 )
+	sw $17 , 28 ( $29 )
+	sw $16 , 24 ( $29 )
+	add $17 , $4 , $0 # expanded move: move $17 , $4
+	addiu $16 , $29 , 44
+	sw $5 , 44 ( $29 )
+	sw $6 , 48 ( $29 )
+	addi $4 , $0 , - 1 # li expansion: li $4 , - 1
+	add $5 , $17 , $0 # expanded move: move $5 , $17
+	add $6 , $16 , $0 # expanded move: move $6 , $16
+	sw $7 , 52 ( $29 )
+	sw $16 , 16 ( $29 )
+	jal printf_internal
+	#APP
+
+	lui $28 , 118 # la expansion: la $28 , __xmtio_buffer
+	ori $28 , $28 , 11968
+	lw $27 , 0 ( $28 )
+	add $2 , $2 , $27
+	sw $2 , 0 ( $28 )
+	addi $2 , $27 , 0 # epxanded psm in serial mode (end)
+	#NO_APP
+	add $4 , $2 , $0 # expanded move: move $4 , $2
+	add $5 , $17 , $0 # expanded move: move $5 , $17
+	add $6 , $16 , $0 # expanded move: move $6 , $16
+	sw $16 , 16 ( $29 )
+	jal printf_internal
+	lw $31 , 32 ( $29 )
+	lw $17 , 28 ( $29 )
+	lw $16 , 24 ( $29 )
+	addiu $29 , $29 , 40
+	jr $31 # Returning from frunction printf
+	.end printf 
+ 	.size	printf, .-printf
+	.align	2
+	.globl __parallel_printf
+	.size	__parallel_printf, .-__parallel_printf
+
+	
+	.ident	"GCC: (GNU) 4.0.2"
+	.file	1 "library.cil.c"
+	.section .mdebug.abi32
+	.previous
+	.text
+	.align	2
+	.globl ceil_log2
+	.ent ceil_log2 
+ ceil_log2 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $6 , $0 , $0 # expanded move: move $6 , $0
+	add $5 , $0 , $0 # expanded move: move $5 , $0
+	j $L2
+$L3 :
+	or $5 , $5 , $3
+	sra $4 , $4 , 1
+	addiu $6 , $6 , 1
+$L2 :
+	slti $2 , $4 , 2
+	andi $3 , $4 , 1
+	beq $2 , $0 , $L3
+	addu $2 , $5 , $6
+	jr $31 # Returning from frunction ceil_log2
+	.end ceil_log2 
+ 	.size	ceil_log2, .-ceil_log2
+	.align	2
+	.globl __parallel_ceil_log2
+	.size	__parallel_ceil_log2, .-__parallel_ceil_log2
+	.align	2
+	.globl __outlined_spawn_1
+	.ent __outlined_spawn_1 
+ __outlined_spawn_1 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $5 , $5 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $5
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_1 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $27 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_1
+	join32
+_xmt_spawnjoinend_1 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_1
+	.end __outlined_spawn_1 
+ 	.size	__outlined_spawn_1, .-__outlined_spawn_1
+	.align	2
+	.globl __outlined_spawn_2
+	.ent __outlined_spawn_2 
+ __outlined_spawn_2 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $7 , $7 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $7
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_2 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $3 , $27 , 2
+	add $7 , $3 , $0 # expanded move: move $7 , $3
+	add $8 , $3 , $0 # expanded move: move $8 , $3
+	addu $3 , $3 , $6
+	addu $7 , $7 , $5
+	addu $8 , $8 , $4
+	addi $2 , $0 , 1 # li expansion: li $2 , 1
+	swp $2 , 0 ( $3 )
+	swp $27 , 0 ( $7 )
+	swp $27 , 0 ( $8 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_2
+	join32
+_xmt_spawnjoinend_2 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_2
+	.end __outlined_spawn_2 
+ 	.size	__outlined_spawn_2, .-__outlined_spawn_2
+	.align	2
+	.globl __outlined_spawn_3
+	.ent __outlined_spawn_3 
+ __outlined_spawn_3 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	lw $2 , 16 ( $29 )
+	addiu $2 , $2 , - 1
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_3 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 3
+	addu $2 , $2 , $7
+	pref 8 , 4 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $10 , 4 ( $2 )
+	lw $9 , 0 ( $2 )
+	sll $2 , $10 , 2
+	sll $8 , $9 , 2
+	add $3 , $8 , $0 # expanded move: move $3 , $8
+	addu $11 , $2 , $5
+	addu $12 , $4 , $8
+	addu $8 , $8 , $5
+	addu $4 , $2 , $4
+	addu $3 , $6 , $3
+	addu $7 , $2 , $6
+	slt $2 , $9 , $10
+	beq $2 , $0 , $L17_0
+	swp $10 , 0 ( $3 )
+	swp $9 , 0 ( $11 )
+	swp $0 , 0 ( $12 )
+	beq $0 , $0 , $L19_0
+$L17_0 :
+	swp $9 , 0 ( $7 )
+	swp $10 , 0 ( $8 )
+	swp $0 , 0 ( $4 )
+$L19_0 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_3
+	join32
+_xmt_spawnjoinend_3 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_3
+	.end __outlined_spawn_3 
+ 	.size	__outlined_spawn_3, .-__outlined_spawn_3
+	.align	2
+	.globl __outlined_spawn_4
+	.ent __outlined_spawn_4 
+ __outlined_spawn_4 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $6 , $6 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $6
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_4 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $3 , $27 , 2
+	addu $2 , $3 , $5
+	lw $6 , 0 ( $2 )
+	sll $2 , $6 , 2
+	addu $2 , $2 , $5
+	#APP
+	lwbuf $5 , 0 ( $2 )
+	#NO_APP
+	sll $2 , $5 , 2
+	addu $2 , $2 , $4
+	addu $3 , $3 , $4
+	beq $6 , $27 , $L22_0
+	swp $0 , 0 ( $3 )
+$L22_0 :
+	beq $6 , $5 , $L24
+	swp $0 , 0 ( $2 )
+$L24 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_4
+	join32
+_xmt_spawnjoinend_4 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_4
+	.end __outlined_spawn_4 
+ 	.size	__outlined_spawn_4, .-__outlined_spawn_4
+	.align	2
+	.globl __outlined_spawn_5
+	.ent __outlined_spawn_5 
+ __outlined_spawn_5 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $7 , $7 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $7
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_5 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $3 , $27 , 2
+	addu $6 , $3 , $6
+	addu $5 , $3 , $5
+	lw $2 , 0 ( $6 )
+	beq $2 , $0 , $L28
+	lw $2 , 0 ( $5 )
+	addu $4 , $3 , $4
+	beq $2 , $27 , $L28
+	swp $2 , 0 ( $4 )
+$L28 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_5
+	join32
+_xmt_spawnjoinend_5 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_5
+	.end __outlined_spawn_5 
+ 	.size	__outlined_spawn_5, .-__outlined_spawn_5
+	.align	2
+	.globl __outlined_spawn_6
+	.ent __outlined_spawn_6 
+ __outlined_spawn_6 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $6 , $6 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $6
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_6 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	#APP
+	lwbuf $3 , 0 ( $2 )
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_6
+	join32
+_xmt_spawnjoinend_6 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_6
+	.end __outlined_spawn_6 
+ 	.size	__outlined_spawn_6, .-__outlined_spawn_6
+	.align	2
+	.globl __outlined_spawn_7
+	.ent __outlined_spawn_7 
+ __outlined_spawn_7 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $6 , $6 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $6
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_7 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	#APP
+	lwbuf $3 , 0 ( $2 )
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_7
+	join32
+_xmt_spawnjoinend_7 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_7
+	.end __outlined_spawn_7 
+ 	.size	__outlined_spawn_7, .-__outlined_spawn_7
+	.align	2
+	.globl __outlined_spawn_8
+	.ent __outlined_spawn_8 
+ __outlined_spawn_8 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $6 , $6 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $6
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_8 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	#APP
+	lwbuf $3 , 0 ( $2 )
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_8
+	join32
+_xmt_spawnjoinend_8 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_8
+	.end __outlined_spawn_8 
+ 	.size	__outlined_spawn_8, .-__outlined_spawn_8
+	.align	2
+	.globl __outlined_spawn_9
+	.ent __outlined_spawn_9 
+ __outlined_spawn_9 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	lw $2 , 16 ( $29 )
+	addiu $2 , $2 , - 1
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_9 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $8 , $27 , 2
+	add $9 , $8 , $0 # expanded move: move $9 , $8
+	addu $8 , $8 , $7
+	addu $9 , $9 , $6
+	sll $3 , $27 , 2
+	addi $2 , $0 , 1 # li expansion: li $2 , 1
+	swp $2 , 0 ( $8 )
+	addu $3 , $3 , $4
+	swp $27 , 0 ( $9 )
+	lw $3 , 0 ( $3 )
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_9
+	join32
+_xmt_spawnjoinend_9 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_9
+	.end __outlined_spawn_9 
+ 	.size	__outlined_spawn_9, .-__outlined_spawn_9
+	.align	2
+	.globl __outlined_spawn_10
+	.ent __outlined_spawn_10 
+ __outlined_spawn_10 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $24 , $4 , $0 # expanded move: move $24 , $4
+	add $15 , $5 , $0 # expanded move: move $15 , $5
+	lw $3 , 24 ( $29 )
+	addiu $3 , $3 , - 1
+	lw $10 , 20 ( $29 )
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $3
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_10 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $24 , $24
+	broadl $24 , $24
+	broadh $15 , $15
+	broadl $15 , $15
+	broadh $10 , $10
+	broadl $10 , $10
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 3
+	lw $3 , 16 ( $29 )
+	addu $2 , $2 , $3
+	pref 8 , 4 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $3 , 4 ( $2 )
+	lw $2 , 0 ( $2 )
+	sll $3 , $3 , 2
+	sll $2 , $2 , 2
+	addu $2 , $2 , $10
+	addu $3 , $3 , $10
+	lw $9 , 0 ( $2 )
+	lw $8 , 0 ( $3 )
+	addi $2 , $0 , 1 # li expansion: li $2 , 1
+	beq $9 , $8 , $L41_0
+	#APP
+	sflush
+	ps $2 , $g0
+	#NO_APP
+	sll $4 , $9 , 2
+	sll $13 , $8 , 2
+	addu $14 , $6 , $4
+	addu $6 , $13 , $6
+	addu $12 , $10 , $13
+	addu $10 , $10 , $4
+	sll $2 , $2 , 3
+	addu $2 , $2 , $7
+	slt $3 , $9 , $8
+	swp $8 , 4 ( $2 )
+	swp $9 , 0 ( $2 )
+	beq $3 , $0 , $L43
+	swp $8 , 0 ( $14 )
+	lw $2 , 0 ( $12 )
+	addu $5 , $15 , $13
+	addu $4 , $24 , $4
+	bne $8 , $2 , $L41_0
+	swp $9 , 0 ( $5 )
+	swp $0 , 0 ( $4 )
+	beq $0 , $0 , $L41_0
+$L43 :
+	swp $9 , 0 ( $6 )
+	lw $2 , 0 ( $10 )
+	addu $5 , $4 , $15
+	addu $4 , $13 , $24
+	bne $9 , $2 , $L41_0
+	swp $8 , 0 ( $5 )
+	swp $0 , 0 ( $4 )
+$L41_0 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_10
+	join32
+_xmt_spawnjoinend_10 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_10
+	.end __outlined_spawn_10 
+ 	.size	__outlined_spawn_10, .-__outlined_spawn_10
+	.align	2
+	.globl connectivity
+	.ent connectivity 
+ connectivity :
+	.frame $30 , 72 , $31 # vars= 0, regs= 10/0, args= 32, gp= 0
+	.mask	0xc0ff0000,-4
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 72
+	sw $31 , 68 ( $29 )
+	sw $30 , 64 ( $29 )
+	sw $23 , 60 ( $29 )
+	sw $22 , 56 ( $29 )
+	sw $21 , 52 ( $29 )
+	sw $20 , 48 ( $29 )
+	sw $19 , 44 ( $29 )
+	sw $18 , 40 ( $29 )
+	sw $17 , 36 ( $29 )
+	sw $16 , 32 ( $29 )
+	add $30 , $29 , $0 # expanded move: move $fp , $sp
+	add $19 , $5 , $0 # expanded move: move $19 , $5
+	add $3 , $6 , $0 # expanded move: move $3 , $6
+	add $23 , $7 , $0 # expanded move: move $23 , $7
+	beq $5 , $0 , $L57
+	bne $6 , $0 , $L51_0
+	add $4 , $7 , $0 # expanded move: move $4 , $7
+	jal __outlined_spawn_1
+	j $L57
+$L51_0 :
+	sll $2 , $5 , 2
+	addiu $2 , $2 , 14
+	srl $2 , $2 , 3
+	sll $2 , $2 , 3
+	subu $29 , $29 , $2
+	addiu $16 , $29 , 32
+	subu $29 , $29 , $2
+	addiu $18 , $29 , 32
+	subu $29 , $29 , $2
+	sll $2 , $6 , 3
+	addiu $2 , $2 , 8
+	addiu $21 , $29 , 32
+	subu $29 , $29 , $2
+	add $22 , $4 , $0 # expanded move: move $22 , $4
+	add $4 , $16 , $0 # expanded move: move $4 , $16
+	add $5 , $21 , $0 # expanded move: move $5 , $21
+	add $6 , $18 , $0 # expanded move: move $6 , $18
+	add $7 , $19 , $0 # expanded move: move $7 , $19
+	add $17 , $3 , $0 # expanded move: move $17 , $3
+	addiu $20 , $29 , 32
+	jal __outlined_spawn_2
+	add $4 , $18 , $0 # expanded move: move $4 , $18
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $21 , $0 # expanded move: move $6 , $21
+	add $7 , $22 , $0 # expanded move: move $7 , $22
+	sw $17 , 16 ( $29 )
+	jal __outlined_spawn_3
+	j $L53
+$L54_0 :
+	jal __outlined_spawn_4
+	add $4 , $16 , $0 # expanded move: move $4 , $16
+	add $5 , $21 , $0 # expanded move: move $5 , $21
+	add $6 , $18 , $0 # expanded move: move $6 , $18
+	add $7 , $19 , $0 # expanded move: move $7 , $19
+	jal __outlined_spawn_5
+	add $4 , $23 , $0 # expanded move: move $4 , $23
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $19 , $0 # expanded move: move $6 , $19
+	jal __outlined_spawn_6
+	add $4 , $16 , $0 # expanded move: move $4 , $16
+	add $5 , $23 , $0 # expanded move: move $5 , $23
+	add $6 , $19 , $0 # expanded move: move $6 , $19
+	jal __outlined_spawn_7
+	add $4 , $23 , $0 # expanded move: move $4 , $23
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $19 , $0 # expanded move: move $6 , $19
+	jal __outlined_spawn_8
+	add $4 , $23 , $0 # expanded move: move $4 , $23
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $21 , $0 # expanded move: move $6 , $21
+	add $7 , $18 , $0 # expanded move: move $7 , $18
+	sw $19 , 16 ( $29 )
+	jal __outlined_spawn_9
+	add $7 , $20 , $0 # expanded move: move $7 , $20
+	add $4 , $18 , $0 # expanded move: move $4 , $18
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $21 , $0 # expanded move: move $6 , $21
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	mvtg $g0 , $2
+	blez $17 , $L55
+	sw $17 , 24 ( $29 )
+	sw $22 , 16 ( $29 )
+	sw $23 , 20 ( $29 )
+	jal __outlined_spawn_10
+$L55 :
+	add $2 , $22 , $0 # expanded move: move $2 , $22
+	mvfg $17 , $g0
+	add $22 , $20 , $0 # expanded move: move $22 , $20
+	add $20 , $2 , $0 # expanded move: move $20 , $2
+$L53 :
+	add $4 , $18 , $0 # expanded move: move $4 , $18
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $19 , $0 # expanded move: move $6 , $19
+	bne $17 , $0 , $L54_0
+$L57 :
+	add $29 , $30 , $0 # expanded move: move $sp , $fp
+	lw $31 , 68 ( $29 )
+	lw $30 , 64 ( $29 )
+	lw $23 , 60 ( $29 )
+	lw $22 , 56 ( $29 )
+	lw $21 , 52 ( $29 )
+	lw $20 , 48 ( $29 )
+	lw $19 , 44 ( $29 )
+	lw $18 , 40 ( $29 )
+	lw $17 , 36 ( $29 )
+	lw $16 , 32 ( $29 )
+	addiu $29 , $29 , 72
+	jr $31 # Returning from frunction connectivity
+	.end connectivity 
+ 	.size	connectivity, .-connectivity
+	.align	2
+	.globl __parallel_connectivity
+	.size	__parallel_connectivity, .-__parallel_connectivity
+	.align	2
+	.globl __outlined_spawn_11
+	.ent __outlined_spawn_11 
+ __outlined_spawn_11 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $5 , $5 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $5
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_11 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $27 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_11
+	join32
+_xmt_spawnjoinend_11 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_11
+	.end __outlined_spawn_11 
+ 	.size	__outlined_spawn_11, .-__outlined_spawn_11
+	.align	2
+	.globl __outlined_spawn_12
+	.ent __outlined_spawn_12 
+ __outlined_spawn_12 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	lw $2 , 20 ( $29 )
+	addiu $2 , $2 , - 1
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_12 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $3 , $27 , 2
+	add $8 , $3 , $0 # expanded move: move $8 , $3
+	add $9 , $3 , $0 # expanded move: move $9 , $3
+	add $10 , $3 , $0 # expanded move: move $10 , $3
+	add $11 , $3 , $0 # expanded move: move $11 , $3
+	lw $2 , 16 ( $29 )
+	addu $3 , $3 , $2
+	addu $8 , $8 , $7
+	addu $9 , $9 , $6
+	addu $10 , $10 , $5
+	addu $11 , $11 , $4
+	swp $0 , 0 ( $3 )
+	swp $0 , 0 ( $8 )
+	addi $2 , $0 , 1 # li expansion: li $2 , 1
+	swp $2 , 0 ( $9 )
+	swp $27 , 0 ( $10 )
+	swp $27 , 0 ( $11 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_12
+	join32
+_xmt_spawnjoinend_12 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_12
+	.end __outlined_spawn_12 
+ 	.size	__outlined_spawn_12, .-__outlined_spawn_12
+	.align	2
+	.globl __outlined_spawn_13
+	.ent __outlined_spawn_13 
+ __outlined_spawn_13 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $12 , $4 , $0 # expanded move: move $12 , $4
+	lw $3 , 44 ( $29 )
+	sll $3 , $3 , 1
+	add $14 , $5 , $0 # expanded move: move $14 , $5
+	add $13 , $6 , $0 # expanded move: move $13 , $6
+	addiu $3 , $3 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $3
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_13 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $14 , $14
+	broadl $14 , $14
+	broadh $13 , $13
+	broadl $13 , $13
+	broadh $12 , $12
+	broadl $12 , $12
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 3
+	lw $3 , 40 ( $29 )
+	addu $2 , $2 , $3
+	lw $10 , 4 ( $2 )
+	lw $11 , 0 ( $2 )
+	addi $8 , $0 , 1 # li expansion: li $8 , 1
+	slt $2 , $11 , $10
+	beq $2 , $0 , $L122
+	add $3 , $8 , $0 # expanded move: move $3 , $8
+	#APP
+	sflush
+	ps $3 , $g0
+	#NO_APP
+	sll $6 , $3 , 2
+	pref 8 , 24 ( $29 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $2 , 24 ( $29 )
+	lw $4 , 0 ( $2 )
+	sll $3 , $3 , 3
+	lw $2 , 36 ( $29 )
+	addu $3 , $3 , $2
+	lw $5 , 28 ( $29 )
+	addu $5 , $6 , $5
+	lw $2 , 32 ( $29 )
+	addu $6 , $6 , $2
+	sll $9 , $11 , 2
+	swp $10 , 4 ( $3 )
+	swp $11 , 0 ( $3 )
+	swp $27 , 0 ( $6 )
+	swp $27 , 0 ( $5 )
+	addu $4 , $4 , $9
+	add $3 , $8 , $0 # expanded move: move $3 , $8
+	#APP
+	sflush
+	psm $3 , 0 ( $4 )
+	#NO_APP
+	sll $5 , $10 , 2
+	lw $2 , 20 ( $29 )
+	addu $4 , $9 , $2
+	lw $2 , 16 ( $29 )
+	addu $2 , $9 , $2
+	bne $3 , $0 , $L124_0
+	swp $10 , 0 ( $4 )
+	swp $27 , 0 ( $2 )
+$L124_0 :
+	lw $2 , 0 ( $7 )
+	addu $2 , $2 , $5
+	add $4 , $8 , $0 # expanded move: move $4 , $8
+	#APP
+	sflush
+	psm $4 , 0 ( $2 )
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $6 , $5 , $13
+	addu $5 , $9 , $14
+	addu $2 , $2 , $12
+	bne $4 , $0 , $L126_0
+	swp $11 , 0 ( $6 )
+	swp $0 , 0 ( $5 )
+	swp $8 , 0 ( $2 )
+	beq $0 , $0 , $L122
+$L126_0 :
+	swp $0 , 0 ( $2 )
+$L122 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_13
+	join32
+_xmt_spawnjoinend_13 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_13
+	.end __outlined_spawn_13 
+ 	.size	__outlined_spawn_13, .-__outlined_spawn_13
+	.align	2
+	.globl __outlined_spawn_14
+	.ent __outlined_spawn_14 
+ __outlined_spawn_14 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $6 , $6 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $6
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_14 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $3 , $27 , 2
+	addu $2 , $3 , $5
+	lw $6 , 0 ( $2 )
+	sll $2 , $6 , 2
+	addu $2 , $2 , $5
+	#APP
+	lwbuf $5 , 0 ( $2 )
+	#NO_APP
+	sll $2 , $5 , 2
+	addu $2 , $2 , $4
+	addu $3 , $3 , $4
+	beq $6 , $27 , $L130
+	swp $0 , 0 ( $3 )
+$L130 :
+	beq $6 , $5 , $L132
+	swp $0 , 0 ( $2 )
+$L132 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_14
+	join32
+_xmt_spawnjoinend_14 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_14
+	.end __outlined_spawn_14 
+ 	.size	__outlined_spawn_14, .-__outlined_spawn_14
+	.align	2
+	.globl __outlined_spawn_15
+	.ent __outlined_spawn_15 
+ __outlined_spawn_15 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	lw $2 , 20 ( $29 )
+	addiu $2 , $2 , - 1
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_15 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $3 , $27 , 2
+	lw $2 , 16 ( $29 )
+	addu $2 , $3 , $2
+	addu $7 , $3 , $7
+	lw $2 , 0 ( $2 )
+	beq $2 , $0 , $L136
+	addu $6 , $3 , $6
+	addu $2 , $3 , $4
+	lw $3 , 0 ( $7 )
+	beq $3 , $27 , $L136
+	swp $3 , 0 ( $6 )
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	addi $3 , $0 , 1 # li expansion: li $3 , 1
+	swp $3 , 0 ( $2 )
+$L136 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_15
+	join32
+_xmt_spawnjoinend_15 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_15
+	.end __outlined_spawn_15 
+ 	.size	__outlined_spawn_15, .-__outlined_spawn_15
+	.align	2
+	.globl __outlined_spawn_16
+	.ent __outlined_spawn_16 
+ __outlined_spawn_16 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $6 , $6 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $6
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_16 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	#APP
+	lwbuf $3 , 0 ( $2 )
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_16
+	join32
+_xmt_spawnjoinend_16 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_16
+	.end __outlined_spawn_16 
+ 	.size	__outlined_spawn_16, .-__outlined_spawn_16
+	.align	2
+	.globl __outlined_spawn_17
+	.ent __outlined_spawn_17 
+ __outlined_spawn_17 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $6 , $6 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $6
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_17 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	#APP
+	lwbuf $3 , 0 ( $2 )
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_17
+	join32
+_xmt_spawnjoinend_17 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_17
+	.end __outlined_spawn_17 
+ 	.size	__outlined_spawn_17, .-__outlined_spawn_17
+	.align	2
+	.globl __outlined_spawn_18
+	.ent __outlined_spawn_18 
+ __outlined_spawn_18 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $6 , $6 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $6
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_18 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	#APP
+	lwbuf $3 , 0 ( $2 )
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_18
+	join32
+_xmt_spawnjoinend_18 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_18
+	.end __outlined_spawn_18 
+ 	.size	__outlined_spawn_18, .-__outlined_spawn_18
+	.align	2
+	.globl __outlined_spawn_19
+	.ent __outlined_spawn_19 
+ __outlined_spawn_19 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	lw $2 , 24 ( $29 )
+	addiu $2 , $2 , - 1
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_19 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $8 , $27 , 2
+	add $9 , $8 , $0 # expanded move: move $9 , $8
+	add $10 , $8 , $0 # expanded move: move $10 , $8
+	add $11 , $8 , $0 # expanded move: move $11 , $8
+	lw $2 , 20 ( $29 )
+	addu $8 , $8 , $2
+	lw $2 , 16 ( $29 )
+	addu $9 , $9 , $2
+	addu $10 , $10 , $7
+	addu $11 , $11 , $6
+	sll $3 , $27 , 2
+	swp $0 , 0 ( $8 )
+	addu $3 , $3 , $4
+	swp $0 , 0 ( $9 )
+	addi $2 , $0 , 1 # li expansion: li $2 , 1
+	swp $2 , 0 ( $10 )
+	swp $27 , 0 ( $11 )
+	lw $3 , 0 ( $3 )
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_19
+	join32
+_xmt_spawnjoinend_19 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_19
+	.end __outlined_spawn_19 
+ 	.size	__outlined_spawn_19, .-__outlined_spawn_19
+	.align	2
+	.globl __outlined_spawn_20
+	.ent __outlined_spawn_20 
+ __outlined_spawn_20 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $25 , $4 , $0 # expanded move: move $25 , $4
+	lw $3 , 48 ( $29 )
+	addiu $3 , $3 , - 1
+	lw $24 , 28 ( $29 )
+	lw $11 , 44 ( $29 )
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $3
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_20 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $25 , $25
+	broadl $25 , $25
+	broadh $24 , $24
+	broadl $24 , $24
+	broadh $11 , $11
+	broadl $11 , $11
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 3
+	lw $3 , 40 ( $29 )
+	addu $2 , $2 , $3
+	lw $3 , 4 ( $2 )
+	lw $2 , 0 ( $2 )
+	addi $4 , $0 , 1 # li expansion: li $4 , 1
+	sll $2 , $2 , 2
+	sll $3 , $3 , 2
+	addu $2 , $2 , $11
+	addu $3 , $3 , $11
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $3 ) # Inserted by ContinuousPrefetch
+	lw $9 , 0 ( $2 )
+	lw $8 , 0 ( $3 )
+	beq $9 , $8 , $L149
+	#APP
+	sflush
+	ps $4 , $g0
+	#NO_APP
+	sll $3 , $4 , 3
+	lw $2 , 36 ( $29 )
+	addu $3 , $3 , $2
+	sll $2 , $27 , 2
+	swp $8 , 4 ( $3 )
+	swp $9 , 0 ( $3 )
+	addu $2 , $2 , $24
+	sll $4 , $4 , 2
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 32 ( $29 ) # Inserted by ContinuousPrefetch
+	lw $3 , 0 ( $2 )
+	lw $2 , 32 ( $29 )
+	addu $4 , $4 , $2
+	add $15 , $9 , $0 # expanded move: move $15 , $9
+	add $10 , $8 , $0 # expanded move: move $10 , $8
+	slt $2 , $9 , $8
+	swp $3 , 0 ( $4 )
+	bne $2 , $0 , $L153
+	add $15 , $8 , $0 # expanded move: move $15 , $8
+	add $10 , $9 , $0 # expanded move: move $10 , $9
+$L153 :
+	pref 8 , 24 ( $29 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $2 , 24 ( $29 )
+	lw $2 , 0 ( $2 )
+	sll $4 , $15 , 2
+	addi $9 , $0 , 1 # li expansion: li $9 , 1
+	addu $2 , $2 , $4
+	add $3 , $9 , $0 # expanded move: move $3 , $9
+	#APP
+	sflush
+	psm $3 , 0 ( $2 )
+	#NO_APP
+	lw $2 , 20 ( $29 )
+	addu $14 , $4 , $2
+	sll $8 , $10 , 2
+	sll $2 , $27 , 2
+	addu $13 , $11 , $8
+	addu $12 , $2 , $24
+	lw $2 , 16 ( $29 )
+	addu $11 , $4 , $2
+	bne $3 , $0 , $L154
+	swp $10 , 0 ( $14 )
+	lw $2 , 0 ( $12 )
+	swp $2 , 0 ( $11 )
+$L154 :
+	lw $2 , 0 ( $13 )
+	bne $10 , $2 , $L149
+	lw $2 , 0 ( $7 )
+	addu $2 , $2 , $8
+	add $3 , $9 , $0 # expanded move: move $3 , $9
+	#APP
+	sflush
+	psm $3 , 0 ( $2 )
+	#NO_APP
+	addu $6 , $8 , $6
+	addu $5 , $4 , $5
+	sll $2 , $27 , 2
+	addu $2 , $2 , $24
+	bne $3 , $0 , $L149
+	swp $15 , 0 ( $6 )
+	swp $0 , 0 ( $5 )
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $25
+	swp $9 , 0 ( $2 )
+$L149 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_20
+	join32
+_xmt_spawnjoinend_20 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_20
+	.end __outlined_spawn_20 
+ 	.size	__outlined_spawn_20, .-__outlined_spawn_20
+	.align	2
+	.globl __outlined_spawn_21
+	.ent __outlined_spawn_21 
+ __outlined_spawn_21 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $7 , $7 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $7
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_21 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $6
+	lw $3 , 0 ( $2 )
+	sll $3 , $3 , 2
+	addu $5 , $3 , $5
+	lw $2 , 0 ( $5 )
+	addu $3 , $4 , $3
+	sll $2 , $2 , 2
+	lw $3 , 0 ( $3 )
+	addu $2 , $2 , $4
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_21
+	join32
+_xmt_spawnjoinend_21 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_21
+	.end __outlined_spawn_21 
+ 	.size	__outlined_spawn_21, .-__outlined_spawn_21
+	.align	2
+	.globl connectivityTG
+	.ent connectivityTG 
+ connectivityTG :
+	.frame $30 , 120 , $31 # vars= 24, regs= 10/0, args= 56, gp= 0
+	.mask	0xc0ff0000,-4
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 120
+	sw $31 , 116 ( $29 )
+	sw $30 , 112 ( $29 )
+	sw $23 , 108 ( $29 )
+	sw $22 , 104 ( $29 )
+	sw $21 , 100 ( $29 )
+	sw $20 , 96 ( $29 )
+	sw $19 , 92 ( $29 )
+	sw $18 , 88 ( $29 )
+	sw $17 , 84 ( $29 )
+	sw $16 , 80 ( $29 )
+	add $30 , $29 , $0 # expanded move: move $fp , $sp
+	srl $2 , $7 , 31
+	addu $2 , $2 , $7
+	add $19 , $6 , $0 # expanded move: move $19 , $6
+	add $17 , $4 , $0 # expanded move: move $17 , $4
+	sw $5 , 124 ( $30 )
+	sra $2 , $2 , 1
+	sw $2 , 64 ( $30 )
+	beq $6 , $0 , $L171
+	bne $2 , $0 , $L164
+	lw $4 , 136 ( $30 )
+	add $5 , $6 , $0 # expanded move: move $5 , $6
+	jal __outlined_spawn_11
+	j $L171
+$L164 :
+	lw $2 , 64 ( $30 )
+	sll $3 , $2 , 2
+	addiu $3 , $3 , 14
+	sll $4 , $2 , 3
+	sll $2 , $6 , 2
+	addiu $4 , $4 , 8
+	srl $3 , $3 , 3
+	addiu $2 , $2 , 14
+	sll $3 , $3 , 3
+	subu $29 , $29 , $4
+	srl $2 , $2 , 3
+	sll $2 , $2 , 3
+	addiu $10 , $29 , 56
+	subu $29 , $29 , $3
+	addiu $5 , $29 , 56
+	sw $5 , 72 ( $30 )
+	subu $29 , $29 , $2
+	addiu $16 , $29 , 56
+	subu $29 , $29 , $2
+	addiu $18 , $29 , 56
+	subu $29 , $29 , $2
+	addiu $23 , $29 , 56
+	subu $29 , $29 , $4
+	addiu $4 , $29 , 56
+	sw $4 , 68 ( $30 )
+	subu $29 , $29 , $2
+	addiu $9 , $29 , 56
+	subu $29 , $29 , $2
+	addiu $8 , $29 , 56
+	subu $29 , $29 , $2
+	addiu $5 , $29 , 56
+	sw $5 , 76 ( $30 )
+	subu $29 , $29 , $3
+	add $7 , $8 , $0 # expanded move: move $7 , $8
+	addiu $2 , $29 , 56
+	subu $29 , $29 , $3
+	add $4 , $16 , $0 # expanded move: move $4 , $16
+	add $5 , $23 , $0 # expanded move: move $5 , $23
+	add $6 , $18 , $0 # expanded move: move $6 , $18
+	sw $9 , 16 ( $29 )
+	add $22 , $10 , $0 # expanded move: move $22 , $10
+	add $20 , $2 , $0 # expanded move: move $20 , $2
+	sw $9 , 60 ( $30 )
+	sw $8 , 56 ( $30 )
+	sw $19 , 20 ( $29 )
+	addiu $21 , $29 , 56
+	jal __outlined_spawn_12
+	lw $4 , 140 ( $30 )
+	add $5 , $18 , $0 # expanded move: move $5 , $18
+	add $6 , $16 , $0 # expanded move: move $6 , $16
+	addiu $7 , $30 , 60
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	mvtg $g0 , $2
+	sw $17 , 40 ( $29 )
+	lw $2 , 76 ( $30 )
+	sw $2 , 16 ( $29 )
+	sw $23 , 20 ( $29 )
+	addiu $2 , $30 , 56
+	sw $2 , 24 ( $29 )
+	lw $2 , 72 ( $30 )
+	sw $2 , 28 ( $29 )
+	sw $20 , 32 ( $29 )
+	sw $22 , 36 ( $29 )
+	lw $2 , 64 ( $30 )
+	sw $2 , 44 ( $29 )
+	add $17 , $2 , $0 # expanded move: move $17 , $2
+	jal __outlined_spawn_13
+	j $L166
+$L167 :
+	jal __outlined_spawn_14
+	add $7 , $23 , $0 # expanded move: move $7 , $23
+	lw $4 , 76 ( $30 )
+	lw $5 , 140 ( $30 )
+	add $6 , $16 , $0 # expanded move: move $6 , $16
+	sw $18 , 16 ( $29 )
+	sw $19 , 20 ( $29 )
+	jal __outlined_spawn_15
+	lw $4 , 136 ( $30 )
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $19 , $0 # expanded move: move $6 , $19
+	jal __outlined_spawn_16
+	add $4 , $16 , $0 # expanded move: move $4 , $16
+	lw $5 , 136 ( $30 )
+	add $6 , $19 , $0 # expanded move: move $6 , $19
+	jal __outlined_spawn_17
+	lw $4 , 136 ( $30 )
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $19 , $0 # expanded move: move $6 , $19
+	jal __outlined_spawn_18
+	lw $4 , 136 ( $30 )
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $23 , $0 # expanded move: move $6 , $23
+	add $7 , $18 , $0 # expanded move: move $7 , $18
+	lw $2 , 56 ( $30 )
+	sw $2 , 16 ( $29 )
+	lw $2 , 60 ( $30 )
+	sw $2 , 20 ( $29 )
+	sw $19 , 24 ( $29 )
+	jal __outlined_spawn_19
+	lw $4 , 140 ( $30 )
+	add $5 , $18 , $0 # expanded move: move $5 , $18
+	add $6 , $16 , $0 # expanded move: move $6 , $16
+	addiu $7 , $30 , 60
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	mvtg $g0 , $2
+	blez $17 , $L168
+	sw $17 , 48 ( $29 )
+	sw $20 , 28 ( $29 )
+	sw $21 , 32 ( $29 )
+	lw $2 , 68 ( $30 )
+	sw $2 , 36 ( $29 )
+	sw $22 , 40 ( $29 )
+	lw $2 , 76 ( $30 )
+	sw $2 , 16 ( $29 )
+	sw $23 , 20 ( $29 )
+	addiu $2 , $30 , 56
+	sw $2 , 24 ( $29 )
+	lw $2 , 136 ( $30 )
+	sw $2 , 44 ( $29 )
+	jal __outlined_spawn_20
+$L168 :
+	add $2 , $22 , $0 # expanded move: move $2 , $22
+	add $3 , $20 , $0 # expanded move: move $3 , $20
+	mvfg $17 , $g0
+	lw $22 , 68 ( $30 )
+	add $20 , $21 , $0 # expanded move: move $20 , $21
+	sw $2 , 68 ( $30 )
+	add $21 , $3 , $0 # expanded move: move $21 , $3
+$L166 :
+	add $4 , $18 , $0 # expanded move: move $4 , $18
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $19 , $0 # expanded move: move $6 , $19
+	bne $17 , $0 , $L167
+	lw $4 , 140 ( $30 )
+	lw $5 , 124 ( $30 )
+	lw $6 , 72 ( $30 )
+	lw $7 , 64 ( $30 )
+	jal __outlined_spawn_21
+$L171 :
+	add $29 , $30 , $0 # expanded move: move $sp , $fp
+	lw $31 , 116 ( $29 )
+	lw $30 , 112 ( $29 )
+	lw $23 , 108 ( $29 )
+	lw $22 , 104 ( $29 )
+	lw $21 , 100 ( $29 )
+	lw $20 , 96 ( $29 )
+	lw $19 , 92 ( $29 )
+	lw $18 , 88 ( $29 )
+	lw $17 , 84 ( $29 )
+	lw $16 , 80 ( $29 )
+	addiu $29 , $29 , 120
+	jr $31 # Returning from frunction connectivityTG
+	.end connectivityTG 
+ 	.size	connectivityTG, .-connectivityTG
+	.align	2
+	.globl __parallel_connectivityTG
+	.size	__parallel_connectivityTG, .-__parallel_connectivityTG
+	.align	2
+	.globl __outlined_spawn_22
+	.ent __outlined_spawn_22 
+ __outlined_spawn_22 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $5 , $5 , - 1
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $5
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_22 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	andi $3 , $27 , 1
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_22
+	join32
+_xmt_spawnjoinend_22 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_22
+	.end __outlined_spawn_22 
+ 	.size	__outlined_spawn_22, .-__outlined_spawn_22
+	.align	2
+	.globl __outlined_spawn_23
+	.ent __outlined_spawn_23 
+ __outlined_spawn_23 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $8 , $4 , $0 # expanded move: move $8 , $4
+	lw $2 , 16 ( $29 )
+	addiu $2 , $2 , - 1
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_23 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $8 , $8
+	broadl $8 , $8
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $6 , $2 , $6
+	addu $2 , $2 , $7
+	lw $3 , 0 ( $2 )
+	sll $2 , $27 , 2
+	addu $4 , $2 , $5
+	addi $2 , $0 , 1 # li expansion: li $2 , 1
+	bne $3 , $2 , $L243
+	lw $2 , 0 ( $6 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $7
+	lw $2 , 0 ( $2 )
+	bne $2 , $0 , $L243
+	add $4 , $3 , $0 # expanded move: move $4 , $3
+	#APP
+	sflush
+	ps $4 , $g0
+	#NO_APP
+	sll $3 , $4 , 2
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	addu $3 , $3 , $8
+	swp $4 , 0 ( $2 )
+	swp $27 , 0 ( $3 )
+	beq $0 , $0 , $L249
+$L243 :
+	addi $2 , $0 , - 1 # li expansion: li $2 , - 1
+	swp $2 , 0 ( $4 )
+$L249 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_23
+	join32
+_xmt_spawnjoinend_23 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_23
+	.end __outlined_spawn_23 
+ 	.size	__outlined_spawn_23, .-__outlined_spawn_23
+	.align	2
+	.globl __outlined_spawn_24
+	.ent __outlined_spawn_24 
+ __outlined_spawn_24 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	lw $3 , 36 ( $29 )
+	addiu $3 , $3 , - 1
+	lw $25 , 24 ( $29 )
+	lw $24 , 28 ( $29 )
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $3
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_24 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $25 , $25
+	broadl $25 , $25
+	broadh $24 , $24
+	broadl $24 , $24
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lw $3 , 32 ( $29 )
+	addu $2 , $2 , $3
+	lw $13 , 0 ( $2 )
+	sll $2 , $13 , 2
+	addu $3 , $2 , $25
+	addu $2 , $2 , $24
+	add $12 , $13 , $0 # expanded move: move $12 , $13
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $3 ) # Inserted by ContinuousPrefetch
+	pref 8 , 20 ( $29 ) # Inserted by ContinuousPrefetch
+	lw $11 , 0 ( $2 )
+	lw $3 , 0 ( $3 )
+	lw $2 , 20 ( $29 )
+	bne $13 , $2 , $L253
+	lw $2 , 16 ( $29 )
+	swp $27 , 0 ( $2 )
+$L253 :
+	add $14 , $27 , $0 # expanded move: move $14 , $27
+	addi $15 , $0 , - 1 # li expansion: li $15 , - 1
+$L255 :
+	sll $2 , $3 , 2
+	addu $9 , $2 , $6
+	addu $8 , $24 , $2
+	addu $10 , $25 , $2
+	addu $2 , $7 , $2
+	beq $3 , $12 , $L256
+	lw $2 , 0 ( $2 )
+	bne $2 , $15 , $L256
+	swp $14 , 0 ( $9 )
+	add $12 , $3 , $0 # expanded move: move $12 , $3
+	lw $3 , 0 ( $8 )
+	swp $11 , 0 ( $8 )
+	lw $2 , 0 ( $10 )
+	addu $11 , $11 , $3
+	add $3 , $2 , $0 # expanded move: move $3 , $2
+	swp $13 , 0 ( $10 )
+	beq $0 , $0 , $L255
+$L256 :
+	sll $6 , $27 , 2
+	addu $2 , $6 , $5
+	swp $11 , 0 ( $2 )
+	beq $3 , $12 , $L259
+	sll $2 , $3 , 2
+	addu $2 , $2 , $7
+	lw $3 , 0 ( $2 )
+	addu $2 , $6 , $4
+	swp $3 , 0 ( $2 )
+	beq $0 , $0 , $L261
+$L259 :
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $27 , 0 ( $2 )
+$L261 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_24
+	join32
+_xmt_spawnjoinend_24 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_24
+	.end __outlined_spawn_24 
+ 	.size	__outlined_spawn_24, .-__outlined_spawn_24
+	.align	2
+	.globl __outlined_spawn_25
+	.ent __outlined_spawn_25 
+ __outlined_spawn_25 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	lw $2 , 16 ( $29 )
+	addiu $2 , $2 , - 1
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_25 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $8 , $2 , $4
+	addu $9 , $6 , $2
+	addu $2 , $2 , $7
+	lw $4 , 0 ( $2 )
+	sll $3 , $27 , 2
+	sll $2 , $4 , 2
+	addu $7 , $2 , $5
+	addu $3 , $3 , $6
+	addi $2 , $0 , - 1 # li expansion: li $2 , - 1
+	bne $4 , $2 , $L264
+	pref 8 , 0 ( $8 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $9 ) # Inserted by ContinuousPrefetch
+	lw $2 , 0 ( $8 )
+	lw $3 , 0 ( $9 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	lw $2 , 0 ( $2 )
+	subu $2 , $2 , $3
+	swp $2 , 0 ( $9 )
+	beq $0 , $0 , $L266
+$L264 :
+	lw $2 , 0 ( $7 )
+	swp $2 , 0 ( $3 )
+$L266 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_25
+	join32
+_xmt_spawnjoinend_25 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_25
+	.end __outlined_spawn_25 
+ 	.size	__outlined_spawn_25, .-__outlined_spawn_25
+	.align	2
+	.ent list_rank_cointoss 
+ list_rank_cointoss :
+	.frame $30 , 96 , $31 # vars= 16, regs= 10/0, args= 40, gp= 0
+	.mask	0xc0ff0000,-4
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 96
+	sw $31 , 92 ( $29 )
+	sw $30 , 88 ( $29 )
+	sw $23 , 84 ( $29 )
+	sw $22 , 80 ( $29 )
+	sw $21 , 76 ( $29 )
+	sw $20 , 72 ( $29 )
+	sw $19 , 68 ( $29 )
+	sw $18 , 64 ( $29 )
+	sw $17 , 60 ( $29 )
+	sw $16 , 56 ( $29 )
+	add $30 , $29 , $0 # expanded move: move $fp , $sp
+	add $21 , $7 , $0 # expanded move: move $21 , $7
+	sll $2 , $7 , 2
+	addiu $2 , $2 , 14
+	srl $2 , $2 , 3
+	sll $3 , $2 , 3
+	slti $2 , $7 , 2
+	add $23 , $6 , $0 # expanded move: move $23 , $6
+	add $22 , $5 , $0 # expanded move: move $22 , $5
+	add $5 , $7 , $0 # expanded move: move $5 , $7
+	sw $4 , 96 ( $30 )
+	bne $2 , $0 , $L275
+	subu $29 , $29 , $3
+	addiu $16 , $29 , 40
+	subu $29 , $29 , $3
+	addiu $19 , $29 , 40
+	subu $29 , $29 , $3
+	addiu $20 , $29 , 40
+	subu $29 , $29 , $3
+	add $4 , $16 , $0 # expanded move: move $4 , $16
+	addiu $2 , $29 , 40
+	sw $2 , 48 ( $30 )
+	jal __outlined_spawn_22
+	add $7 , $16 , $0 # expanded move: move $7 , $16
+	add $4 , $20 , $0 # expanded move: move $4 , $20
+	add $5 , $19 , $0 # expanded move: move $5 , $19
+	add $6 , $22 , $0 # expanded move: move $6 , $22
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	mvtg $g0 , $2
+	sw $21 , 16 ( $29 )
+	jal __outlined_spawn_23
+	mvfg $18 , $g0
+	sll $2 , $23 , 2
+	addu $6 , $22 , $2
+	addu $7 , $19 , $2
+	lw $5 , 0 ( $7 )
+	addi $2 , $0 , - 1 # li expansion: li $2 , - 1
+	bne $5 , $2 , $L271
+	lw $2 , 0 ( $6 )
+	mvfg $3 , $g0
+	sll $2 , $2 , 2
+	addu $2 , $2 , $19
+	lw $4 , 0 ( $2 )
+	sll $3 , $3 , 2
+	sll $2 , $4 , 2
+	addu $8 , $2 , $20
+	addu $3 , $3 , $20
+	beq $4 , $5 , $L273
+	lw $2 , 0 ( $6 )
+	add $3 , $2 , $0 # expanded move: move $3 , $2
+	sw $23 , 0 ( $8 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $19
+	lw $2 , 0 ( $2 )
+	sll $3 , $3 , 2
+	addu $3 , $3 , $19
+	sw $2 , 0 ( $7 )
+	sw $5 , 0 ( $3 )
+	j $L271
+$L273 :
+	sw $18 , 0 ( $7 )
+	sw $23 , 0 ( $3 )
+	addiu $18 , $18 , 1
+$L271 :
+	sll $2 , $18 , 2
+	lw $6 , 48 ( $30 )
+	add $7 , $19 , $0 # expanded move: move $7 , $19
+	addiu $2 , $2 , 14
+	srl $2 , $2 , 3
+	sll $2 , $2 , 3
+	subu $29 , $29 , $2
+	addiu $16 , $29 , 40
+	subu $29 , $29 , $2
+	addiu $17 , $29 , 40
+	add $4 , $17 , $0 # expanded move: move $4 , $17
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	addiu $2 , $30 , 40
+	sw $2 , 16 ( $29 )
+	sw $23 , 20 ( $29 )
+	sw $22 , 24 ( $29 )
+	sw $20 , 32 ( $29 )
+	lw $2 , 96 ( $30 )
+	sw $2 , 28 ( $29 )
+	sw $18 , 36 ( $29 )
+	jal __outlined_spawn_24
+	add $4 , $16 , $0 # expanded move: move $4 , $16
+	add $5 , $17 , $0 # expanded move: move $5 , $17
+	lw $6 , 40 ( $30 )
+	add $7 , $18 , $0 # expanded move: move $7 , $18
+	jal list_rank_cointoss
+	lw $4 , 48 ( $30 )
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	lw $6 , 96 ( $30 )
+	add $7 , $19 , $0 # expanded move: move $7 , $19
+	sw $21 , 16 ( $29 )
+	jal __outlined_spawn_25
+$L275 :
+	add $29 , $30 , $0 # expanded move: move $sp , $fp
+	lw $31 , 92 ( $29 )
+	lw $30 , 88 ( $29 )
+	lw $23 , 84 ( $29 )
+	lw $22 , 80 ( $29 )
+	lw $21 , 76 ( $29 )
+	lw $20 , 72 ( $29 )
+	lw $19 , 68 ( $29 )
+	lw $18 , 64 ( $29 )
+	lw $17 , 60 ( $29 )
+	lw $16 , 56 ( $29 )
+	addiu $29 , $29 , 96
+	jr $31 # Returning from frunction list_rank_cointoss
+	.end list_rank_cointoss 
+ 	.size	list_rank_cointoss, .-list_rank_cointoss
+	.align	2
+	.size	__parallel_list_rank_cointoss, .-__parallel_list_rank_cointoss
+	.align	2
+	.globl list_rank
+	.ent list_rank 
+ list_rank :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $2 , $4 , $0 # expanded move: move $2 , $4
+	add $3 , $6 , $0 # expanded move: move $3 , $6
+	add $4 , $5 , $0 # expanded move: move $4 , $5
+	add $6 , $7 , $0 # expanded move: move $6 , $7
+	add $5 , $2 , $0 # expanded move: move $5 , $2
+	add $7 , $3 , $0 # expanded move: move $7 , $3
+	j list_rank_cointoss
+	.end list_rank 
+ 	.size	list_rank, .-list_rank
+	.align	2
+	.globl __parallel_list_rank
+	.size	__parallel_list_rank, .-__parallel_list_rank
+	.align	2
+	.globl __outlined_spawn_26
+	.ent __outlined_spawn_26 
+ __outlined_spawn_26 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	lw $2 , 16 ( $29 )
+	addiu $2 , $2 , - 1
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_26 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $3 , $27 , 1
+	addu $6 , $3 , $6
+	addu $2 , $27 , $4
+	sll $6 , $6 , 2
+	addiu $3 , $3 , 1
+	sll $2 , $2 , 2
+	slt $3 , $3 , $5
+	addu $2 , $2 , $7
+	addu $6 , $6 , $7
+	lw $5 , 0 ( $6 )
+	beq $3 , $0 , $L324
+	lw $6 , 4 ( $6 )
+	addu $2 , $4 , $27
+	sll $2 , $2 , 2
+	addu $4 , $2 , $7
+	slt $2 , $5 , $6
+	beq $2 , $0 , $L326
+	swp $5 , 0 ( $4 )
+	beq $0 , $0 , $L328
+$L326 :
+	swp $6 , 0 ( $4 )
+	beq $0 , $0 , $L328
+$L324 :
+	swp $5 , 0 ( $2 )
+$L328 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_26
+	join32
+_xmt_spawnjoinend_26 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_26
+	.end __outlined_spawn_26 
+ 	.size	__outlined_spawn_26, .-__outlined_spawn_26
+	.align	2
+	.globl preprocess_range_min_int
+	.ent preprocess_range_min_int 
+ preprocess_range_min_int :
+	.frame $29 , 48 , $31 # vars= 0, regs= 6/0, args= 24, gp= 0
+	.mask	0x801f0000,-4
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 48
+	sw $31 , 44 ( $29 )
+	sw $20 , 40 ( $29 )
+	sw $19 , 36 ( $29 )
+	sw $18 , 32 ( $29 )
+	sw $17 , 28 ( $29 )
+	sw $16 , 24 ( $29 )
+	add $16 , $5 , $0 # expanded move: move $16 , $5
+	add $20 , $4 , $0 # expanded move: move $20 , $4
+	add $4 , $5 , $0 # expanded move: move $4 , $5
+	jal ceil_log2
+	addiu $19 , $2 , 1
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $0 , $0 # expanded move: move $6 , $0
+	addi $18 , $0 , 1 # li expansion: li $18 , 1
+	j $L331
+$L332 :
+	sw $16 , 16 ( $29 )
+	jal __outlined_spawn_26
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $17 , $0 # expanded move: move $6 , $17
+$L331 :
+	addiu $2 , $5 , 1
+	srl $3 , $2 , 31
+	addu $3 , $3 , $2
+	addu $17 , $5 , $6
+	sra $16 , $3 , 1
+	add $4 , $17 , $0 # expanded move: move $4 , $17
+	add $7 , $20 , $0 # expanded move: move $7 , $20
+	slt $2 , $19 , $18
+	addiu $18 , $18 , 1
+	beq $2 , $0 , $L332
+	lw $31 , 44 ( $29 )
+	lw $20 , 40 ( $29 )
+	lw $19 , 36 ( $29 )
+	lw $18 , 32 ( $29 )
+	lw $17 , 28 ( $29 )
+	lw $16 , 24 ( $29 )
+	addiu $29 , $29 , 48
+	jr $31 # Returning from frunction preprocess_range_min_int
+	.end preprocess_range_min_int 
+ 	.size	preprocess_range_min_int, .-preprocess_range_min_int
+	.align	2
+	.globl __parallel_preprocess_range_min_int
+	.size	__parallel_preprocess_range_min_int, .-__parallel_preprocess_range_min_int
+	.align	2
+	.globl query_range_min_int
+	.size	query_range_min_int, .-query_range_min_int
+	.align	2
+	.globl __parallel_query_range_min_int
+	.size	__parallel_query_range_min_int, .-__parallel_query_range_min_int
+	.align	2
+	.globl __outlined_spawn_27
+	.ent __outlined_spawn_27 
+ __outlined_spawn_27 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	lw $2 , 16 ( $29 )
+	addiu $2 , $2 , - 1
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_27 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $3 , $27 , 1
+	addu $6 , $3 , $6
+	addu $2 , $27 , $4
+	sll $6 , $6 , 2
+	addiu $3 , $3 , 1
+	sll $2 , $2 , 2
+	slt $3 , $3 , $5
+	addu $2 , $2 , $7
+	addu $6 , $6 , $7
+	lw $5 , 0 ( $6 )
+	beq $3 , $0 , $L389
+	lw $6 , 4 ( $6 )
+	addu $2 , $4 , $27
+	sll $2 , $2 , 2
+	addu $4 , $2 , $7
+	slt $2 , $6 , $5
+	beq $2 , $0 , $L391
+	swp $5 , 0 ( $4 )
+	beq $0 , $0 , $L393
+$L391 :
+	swp $6 , 0 ( $4 )
+	beq $0 , $0 , $L393
+$L389 :
+	swp $5 , 0 ( $2 )
+$L393 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_27
+	join32
+_xmt_spawnjoinend_27 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_27
+	.end __outlined_spawn_27 
+ 	.size	__outlined_spawn_27, .-__outlined_spawn_27
+	.align	2
+	.globl preprocess_range_max_int
+	.ent preprocess_range_max_int 
+ preprocess_range_max_int :
+	.frame $29 , 48 , $31 # vars= 0, regs= 6/0, args= 24, gp= 0
+	.mask	0x801f0000,-4
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 48
+	sw $31 , 44 ( $29 )
+	sw $20 , 40 ( $29 )
+	sw $19 , 36 ( $29 )
+	sw $18 , 32 ( $29 )
+	sw $17 , 28 ( $29 )
+	sw $16 , 24 ( $29 )
+	add $16 , $5 , $0 # expanded move: move $16 , $5
+	add $20 , $4 , $0 # expanded move: move $20 , $4
+	add $4 , $5 , $0 # expanded move: move $4 , $5
+	jal ceil_log2
+	addiu $19 , $2 , 1
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $0 , $0 # expanded move: move $6 , $0
+	addi $18 , $0 , 1 # li expansion: li $18 , 1
+	j $L396
+$L397 :
+	sw $16 , 16 ( $29 )
+	jal __outlined_spawn_27
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $6 , $17 , $0 # expanded move: move $6 , $17
+$L396 :
+	addiu $2 , $5 , 1
+	srl $3 , $2 , 31
+	addu $3 , $3 , $2
+	addu $17 , $5 , $6
+	sra $16 , $3 , 1
+	add $4 , $17 , $0 # expanded move: move $4 , $17
+	add $7 , $20 , $0 # expanded move: move $7 , $20
+	slt $2 , $19 , $18
+	addiu $18 , $18 , 1
+	beq $2 , $0 , $L397
+	lw $31 , 44 ( $29 )
+	lw $20 , 40 ( $29 )
+	lw $19 , 36 ( $29 )
+	lw $18 , 32 ( $29 )
+	lw $17 , 28 ( $29 )
+	lw $16 , 24 ( $29 )
+	addiu $29 , $29 , 48
+	jr $31 # Returning from frunction preprocess_range_max_int
+	.end preprocess_range_max_int 
+ 	.size	preprocess_range_max_int, .-preprocess_range_max_int
+	.align	2
+	.globl __parallel_preprocess_range_max_int
+	.size	__parallel_preprocess_range_max_int, .-__parallel_preprocess_range_max_int
+	.align	2
+	.globl query_range_max_int
+	.size	query_range_max_int, .-query_range_max_int
+	.align	2
+	.globl __parallel_query_range_max_int
+	.size	__parallel_query_range_max_int, .-__parallel_query_range_max_int
+	.align	2
+	.globl __outlined_spawn_28
+	.size	__outlined_spawn_28, .-__outlined_spawn_28
+	.align	2
+	.globl sum_int
+	.size	sum_int, .-sum_int
+	.align	2
+	.globl __parallel_sum_int
+	.size	__parallel_sum_int, .-__parallel_sum_int
+	.align	2
+	.globl __outlined_spawn_29
+	.size	__outlined_spawn_29, .-__outlined_spawn_29
+	.align	2
+	.globl segmented_sum_int
+	.size	segmented_sum_int, .-segmented_sum_int
+	.align	2
+	.globl __parallel_segmented_sum_int
+	.size	__parallel_segmented_sum_int, .-__parallel_segmented_sum_int
+	.align	2
+	.globl __outlined_spawn_30
+	.ent __outlined_spawn_30 
+ __outlined_spawn_30 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addu $2 , $7 , $6
+	addiu $2 , $2 , - 1
+	div $2 , $6
+	mflo $2
+	add $9 , $4 , $0 # expanded move: move $9 , $4
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	addiu $2 , $2 , - 1
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_30 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $9 , $9
+	broadl $9 , $9
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	mult $6 , $27
+	mflo $4
+	addu $6 , $6 , $4
+	slt $2 , $7 , $6
+	beq $2 , $0 , $L530
+	add $6 , $7 , $0 # expanded move: move $6 , $7
+$L530 :
+	sll $3 , $4 , 2
+	addiu $4 , $4 , 1
+	addu $2 , $3 , $5
+	lw $8 , 0 ( $2 )
+	sll $2 , $4 , 2
+	addu $7 , $9 , $2
+	addu $3 , $3 , $9
+	addu $5 , $5 , $2
+	swp $8 , 0 ( $3 )
+	beq $0 , $0 , $L532
+$L533 :
+	lw $2 , - 4 ( $5 )
+	addu $8 , $8 , $2
+	swp $8 , - 4 ( $7 )
+$L532 :
+	slt $2 , $4 , $6
+	addiu $4 , $4 , 1
+	addiu $5 , $5 , 4
+	addiu $7 , $7 , 4
+	bne $2 , $0 , $L533
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_30
+	join32
+_xmt_spawnjoinend_30 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_30
+	.end __outlined_spawn_30 
+ 	.size	__outlined_spawn_30, .-__outlined_spawn_30
+	.align	2
+	.globl __outlined_spawn_31
+	.ent __outlined_spawn_31 
+ __outlined_spawn_31 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	mult $6 , $5
+	mflo $5
+	subu $2 , $7 , $6
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	addu $2 , $2 , $5
+	div $2 , $5
+	mflo $2
+	addiu $2 , $2 , - 1
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_31 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	mult $5 , $27
+	mflo $2
+	addu $2 , $6 , $2
+	addiu $3 , $2 , - 1
+	addu $8 , $3 , $5
+	slt $2 , $7 , $8
+	beq $2 , $0 , $L537
+	add $8 , $7 , $0 # expanded move: move $8 , $7
+$L537 :
+	sll $2 , $3 , 2
+	addu $2 , $2 , $4
+	lw $5 , 0 ( $2 )
+	addu $3 , $6 , $3
+	beq $0 , $0 , $L539
+$L540 :
+	lw $2 , 0 ( $7 )
+	addu $5 , $5 , $2
+	swp $5 , 0 ( $7 )
+$L539 :
+	sll $2 , $3 , 2
+	addu $7 , $4 , $2
+	slt $2 , $3 , $8
+	addu $3 , $3 , $6
+	bne $2 , $0 , $L540
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_31
+	join32
+_xmt_spawnjoinend_31 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_31
+	.end __outlined_spawn_31 
+ 	.size	__outlined_spawn_31, .-__outlined_spawn_31
+	.align	2
+	.globl __outlined_spawn_32
+	.ent __outlined_spawn_32 
+ __outlined_spawn_32 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	mult $6 , $5
+	mflo $6
+	addi $3 , $0 , 1 # li expansion: li $3 , 1
+	addu $2 , $6 , $7
+	addiu $2 , $2 , - 1
+	div $2 , $6
+	mflo $2
+	addiu $2 , $2 , - 1
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_32 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $7 , $7
+	broadl $7 , $7
+	broadh $6 , $6
+	broadl $6 , $6
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	mult $6 , $27
+	mflo $2
+	addiu $3 , $2 , - 1
+	addu $8 , $3 , $6
+	slt $2 , $7 , $8
+	beq $2 , $0 , $L544
+	add $8 , $7 , $0 # expanded move: move $8 , $7
+$L544 :
+	sll $2 , $3 , 2
+	addu $2 , $2 , $4
+	lw $7 , 0 ( $2 )
+	addu $3 , $5 , $3
+	beq $0 , $0 , $L546
+$L547 :
+	lw $2 , 0 ( $6 )
+	addu $2 , $7 , $2
+	swp $2 , 0 ( $6 )
+$L546 :
+	sll $2 , $3 , 2
+	addu $6 , $4 , $2
+	slt $2 , $3 , $8
+	addu $3 , $3 , $5
+	bne $2 , $0 , $L547
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_32
+	join32
+_xmt_spawnjoinend_32 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_32
+	.end __outlined_spawn_32 
+ 	.size	__outlined_spawn_32, .-__outlined_spawn_32
+	.align	2
+	.globl prefix_sum_int
+	.ent prefix_sum_int 
+ prefix_sum_int :
+	.frame $29 , 40 , $31 # vars= 0, regs= 5/0, args= 16, gp= 0
+	.mask	0x800f0000,-8
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 40
+	sw $31 , 32 ( $29 )
+	sw $19 , 28 ( $29 )
+	sw $18 , 24 ( $29 )
+	sw $17 , 20 ( $29 )
+	sw $16 , 16 ( $29 )
+	add $17 , $5 , $0 # expanded move: move $17 , $5
+	add $18 , $6 , $0 # expanded move: move $18 , $6
+	add $5 , $4 , $0 # expanded move: move $5 , $4
+	add $4 , $6 , $0 # expanded move: move $4 , $6
+	addi $6 , $0 , 20 # li expansion: li $6 , 20
+	add $7 , $17 , $0 # expanded move: move $7 , $17
+	jal __outlined_spawn_30
+	addi $16 , $0 , 20 # li expansion: li $16 , 20
+	j $L551
+$L552 :
+	jal __outlined_spawn_31
+	sll $3 , $16 , 4
+	sll $2 , $16 , 2
+	addu $16 , $2 , $3
+$L551 :
+	add $6 , $16 , $0 # expanded move: move $6 , $16
+	add $4 , $18 , $0 # expanded move: move $4 , $18
+	addi $5 , $0 , 20 # li expansion: li $5 , 20
+	add $7 , $17 , $0 # expanded move: move $7 , $17
+	sll $2 , $16 , 1
+	slt $2 , $17 , $2
+	beq $2 , $0 , $L552
+	lui $2 , 26214 # li expansion: li $2 , 1717960704
+	ori $2 , $2 , 0
+	ori $2 , $2 , 26215
+	mult $16 , $2
+	mfhi $3
+	sra $4 , $16 , 31
+	add $19 , $2 , $0 # expanded move: move $19 , $2
+	sra $3 , $3 , 3
+	subu $16 , $3 , $4
+	j $L554
+$L555 :
+	jal __outlined_spawn_32
+	mult $16 , $19
+	mfhi $2
+	sra $3 , $16 , 31
+	sra $2 , $2 , 3
+	subu $16 , $2 , $3
+$L554 :
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	add $4 , $18 , $0 # expanded move: move $4 , $18
+	addi $6 , $0 , 20 # li expansion: li $6 , 20
+	add $7 , $17 , $0 # expanded move: move $7 , $17
+	bgtz $16 , $L555
+	lw $31 , 32 ( $29 )
+	lw $19 , 28 ( $29 )
+	lw $18 , 24 ( $29 )
+	lw $17 , 20 ( $29 )
+	lw $16 , 16 ( $29 )
+	addiu $29 , $29 , 40
+	jr $31 # Returning from frunction prefix_sum_int
+	.end prefix_sum_int 
+ 	.size	prefix_sum_int, .-prefix_sum_int
+	.align	2
+	.globl __parallel_prefix_sum_int
+	.size	__parallel_prefix_sum_int, .-__parallel_prefix_sum_int
+	.align	2
+	.globl __outlined_spawn_33
+	.size	__outlined_spawn_33, .-__outlined_spawn_33
+	.align	2
+	.globl min_int
+	.size	min_int, .-min_int
+	.align	2
+	.globl __parallel_min_int
+	.size	__parallel_min_int, .-__parallel_min_int
+	.align	2
+	.globl __outlined_spawn_34
+	.size	__outlined_spawn_34, .-__outlined_spawn_34
+	.align	2
+	.globl segmented_min_int
+	.size	segmented_min_int, .-segmented_min_int
+	.align	2
+	.globl __parallel_segmented_min_int
+	.size	__parallel_segmented_min_int, .-__parallel_segmented_min_int
+	.align	2
+	.globl __outlined_spawn_35
+	.size	__outlined_spawn_35, .-__outlined_spawn_35
+	.align	2
+	.globl __outlined_spawn_36
+	.size	__outlined_spawn_36, .-__outlined_spawn_36
+	.align	2
+	.globl __outlined_spawn_37
+	.size	__outlined_spawn_37, .-__outlined_spawn_37
+	.align	2
+	.globl prefix_min_int
+	.size	prefix_min_int, .-prefix_min_int
+	.align	2
+	.globl __parallel_prefix_min_int
+	.size	__parallel_prefix_min_int, .-__parallel_prefix_min_int
+	.align	2
+	.globl __outlined_spawn_38
+	.size	__outlined_spawn_38, .-__outlined_spawn_38
+	.align	2
+	.globl max_int
+	.size	max_int, .-max_int
+	.align	2
+	.globl __parallel_max_int
+	.size	__parallel_max_int, .-__parallel_max_int
+	.align	2
+	.globl __outlined_spawn_39
+	.size	__outlined_spawn_39, .-__outlined_spawn_39
+	.align	2
+	.globl segmented_max_int
+	.size	segmented_max_int, .-segmented_max_int
+	.align	2
+	.globl __parallel_segmented_max_int
+	.size	__parallel_segmented_max_int, .-__parallel_segmented_max_int
+	.align	2
+	.globl __outlined_spawn_40
+	.size	__outlined_spawn_40, .-__outlined_spawn_40
+	.align	2
+	.globl __outlined_spawn_41
+	.size	__outlined_spawn_41, .-__outlined_spawn_41
+	.align	2
+	.globl __outlined_spawn_42
+	.size	__outlined_spawn_42, .-__outlined_spawn_42
+	.align	2
+	.globl prefix_max_int
+	.size	prefix_max_int, .-prefix_max_int
+	.align	2
+	.globl __parallel_prefix_max_int
+	.size	__parallel_prefix_max_int, .-__parallel_prefix_max_int
+	.ident	"GCC: (GNU) 4.0.2"
+	.file	1 "xmtc.cil.c"
+	.section .mdebug.abi32
+	.previous
+	.rdata
+	.align	2
+$LC0 :
+	.ascii "ERROR: _XMT_NTUCS=%d but system has %d TCUs\012\000"
+	.text
+	.align	2
+	.globl _xmt_check_ntcus
+	.ent _xmt_check_ntcus 
+ _xmt_check_ntcus :
+	.frame $29 , 24 , $31 # vars= 0, regs= 1/0, args= 16, gp= 0
+	.mask	0x80000000,-8
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 24
+	sw $31 , 16 ( $29 )
+	#APP
+	getid $6 , $0
+	#NO_APP
+	addi $2 , $0 , 64 # li expansion: li $2 , 64
+	beq $6 , $2 , $L4
+	lui $4 , 0 # la expansion: la $4 , $LC0
+	ori $4 , $4 , 10460
+	addi $5 , $0 , 64 # li expansion: li $5 , 64
+	jal printf
+	#APP
+	halt
+	#NO_APP
+$L4 :
+	lw $31 , 16 ( $29 )
+	addiu $29 , $29 , 24
+	jr $31 # Returning from frunction _xmt_check_ntcus
+	.end _xmt_check_ntcus 
+ 	.size	_xmt_check_ntcus, .-_xmt_check_ntcus
+	.align	2
+	.globl __parallel__xmt_check_ntcus
+	.size	__parallel__xmt_check_ntcus, .-__parallel__xmt_check_ntcus
+
+	
+	.ident	"GCC: (GNU) 4.0.2"
+	.file	1 "biconnectivity.p.cil.c"
+	.section .mdebug.abi32
+	.previous
+	.globl new_degrees
+	.section	.bss,"aw",@nobits
+	.align	2
+	.type	new_degrees, @object
+	.size	new_degrees, 52392
+new_degrees :
+	.space 52392
+	.text
+	.align	2
+	.globl main
+	.ent main 
+ main :
+	.frame $29 , 11357136 , $31 # vars= 11357088, regs= 5/0, args= 24, gp= 0
+	.mask	0x800f0000,-8
+	.fmask	0x00000000,0
+	addiu $29 , $29 , - 32752
+	sw $31 , 32744 ( $29 )
+	sw $19 , 32740 ( $29 )
+	sw $18 , 32736 ( $29 )
+	sw $17 , 32732 ( $29 )
+	sw $16 , 32728 ( $29 )
+	lui $3 , 172 # li expansion: li $3 , 11272192
+	ori $3 , $3 , 0
+	ori $3 , $3 , 52192
+	subu $29 , $29 , $3
+	lui $2 , 125 # la expansion: la $2 , D
+	ori $2 , $2 , 11972
+	sw $2 , 16 ( $29 )
+	lui $17 , 125 # la expansion: la $17 , T
+	ori $17 , $17 , 64364
+	sw $17 , 20 ( $29 )
+	lui $4 , 2 # la expansion: la $4 , edges
+	ori $4 , $4 , 42736
+	lui $5 , 60 # la expansion: la $5 , antiparallel
+	ori $5 , $5 , 27352
+	addi $6 , $0 , 13098 # li expansion: li $6 , 13098
+	lui $16 , 7 # li expansion: li $16 , 458752
+	ori $16 , $16 , 0
+	ori $7 , $16 , 14460
+	jal connectivityTG
+	add $4 , $17 , $0 # expanded move: move $4 , $17
+	ori $5 , $16 , 14460
+	lui $6 , 154 # la expansion: la $6 , T_comp
+	ori $6 , $6 , 56668
+	jal prefix_sum_int
+	lui $2 , 183 # la expansion: la $2 , T_comp + 1892844
+	ori $2 , $2 , 48968
+	lw $2 , 0 ( $2 )
+	lui $28 , 241 # la expansion: la $28 , new_M
+	ori $28 , $28 , 33580
+	sw $2 , 0 ( $28 )
+	jal __outlined_spawn_1_0
+	jal __outlined_spawn_2_0
+	jal __outlined_spawn_3_0
+	jal __outlined_spawn_4_0
+	lui $4 , 241 # la expansion: la $4 , new_M
+	ori $4 , $4 , 33580
+	lw $4 , 0 ( $4 )
+	jal __outlined_spawn_5_0
+	lui $17 , 242 # la expansion: la $17 , new_antiparallel
+	ori $17 , $17 , 20440
+	lui $2 , 241 # la expansion: la $2 , new_vertices
+	ori $2 , $2 , 33584
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $17
+	lw $3 , 0 ( $2 )
+	lui $18 , 271 # la expansion: la $18 , next_D_1
+	ori $18 , $18 , 12744
+	sll $2 , $3 , 2
+	addu $2 , $2 , $18
+	lw $19 , 0 ( $2 )
+	sw $3 , 0 ( $2 )
+	lui $4 , 241 # la expansion: la $4 , new_M
+	ori $4 , $4 , 33580
+	lw $4 , 0 ( $4 )
+	jal __outlined_spawn_6_0
+	lui $2 , 241 # la expansion: la $2 , new_vertices
+	ori $2 , $2 , 33584
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $17
+	lw $2 , 0 ( $2 )
+	lui $16 , 328 # la expansion: la $16 , R
+	ori $16 , $16 , 62888
+	sll $2 , $2 , 2
+	addu $2 , $2 , $16
+	sw $0 , 0 ( $2 )
+	add $4 , $18 , $0 # expanded move: move $4 , $18
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	lui $6 , 241 # la expansion: la $6 , new_M
+	ori $6 , $6 , 33580
+	lw $6 , 0 ( $6 )
+	add $7 , $19 , $0 # expanded move: move $7 , $19
+	jal list_rank
+	lui $4 , 241 # la expansion: la $4 , new_M
+	ori $4 , $4 , 33580
+	lw $4 , 0 ( $4 )
+	jal __outlined_spawn_7_0
+	lui $4 , 241 # la expansion: la $4 , new_M
+	ori $4 , $4 , 33580
+	lw $4 , 0 ( $4 )
+	jal __outlined_spawn_8_0
+	lui $2 , 241 # la expansion: la $2 , new_vertices
+	ori $2 , $2 , 33584
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $17
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $16
+	sw $0 , 0 ( $2 )
+	lui $4 , 300 # la expansion: la $4 , next_D_2
+	ori $4 , $4 , 5048
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	lui $6 , 241 # la expansion: la $6 , new_M
+	ori $6 , $6 , 33580
+	lw $6 , 0 ( $6 )
+	add $7 , $19 , $0 # expanded move: move $7 , $19
+	jal list_rank
+	addi $2 , $0 , 1 # li expansion: li $2 , 1
+	lui $28 , 387 # la expansion: la $28 , preorder
+	ori $28 , $28 , 34352
+	sw $2 , 0 ( $28 )
+	lui $28 , 418 # la expansion: la $28 , low
+	ori $28 , $28 , 368
+	sw $2 , 0 ( $28 )
+	addi $2 , $0 , 13098 # li expansion: li $2 , 13098
+	lui $28 , 420 # la expansion: la $28 , high
+	ori $28 , $28 , 26472
+	sw $2 , 0 ( $28 )
+	lui $28 , 388 # la expansion: la $28 , size_subtree
+	ori $28 , $28 , 21208
+	sw $2 , 0 ( $28 )
+	lui $4 , 241 # la expansion: la $4 , new_M
+	ori $4 , $4 , 33580
+	lw $4 , 0 ( $4 )
+	jal __outlined_spawn_9_0
+	jal __outlined_spawn_10_0
+	jal __outlined_spawn_11_0
+	lui $4 , 422 # la expansion: la $4 , aux_low
+	ori $4 , $4 , 52576
+	addi $5 , $0 , 13098 # li expansion: li $5 , 13098
+	jal preprocess_range_min_int
+	lui $4 , 425 # la expansion: la $4 , aux_high
+	ori $4 , $4 , 13144
+	addi $5 , $0 , 13098 # li expansion: li $5 , 13098
+	jal preprocess_range_max_int
+	jal __outlined_spawn_12_0
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	mvtg $g0 , $2
+	addiu $18 , $29 , 24
+	lui $17 , 28 # li expansion: li $17 , 1835008
+	ori $17 , $17 , 0
+	ori $17 , $17 , 57840
+	addu $17 , $18 , $17
+	lui $4 , 241 # la expansion: la $4 , new_M
+	ori $4 , $4 , 33580
+	lw $4 , 0 ( $4 )
+	add $5 , $17 , $0 # expanded move: move $5 , $17
+	jal __outlined_spawn_13_0
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	mvtg $g0 , $2
+	lui $16 , 57 # li expansion: li $16 , 3735552
+	ori $16 , $16 , 0
+	ori $16 , $16 , 50144
+	addu $16 , $18 , $16
+	add $4 , $17 , $0 # expanded move: move $4 , $17
+	add $5 , $16 , $0 # expanded move: move $5 , $16
+	jal __outlined_spawn_14_0
+	lui $2 , 241 # la expansion: la $2 , new_M
+	ori $2 , $2 , 33580
+	lw $2 , 0 ( $2 )
+	srl $5 , $2 , 31
+	addu $5 , $5 , $2
+	add $4 , $16 , $0 # expanded move: move $4 , $16
+	sra $5 , $5 , 1
+	mvfg $6 , $g0
+	add $7 , $18 , $0 # expanded move: move $7 , $18
+	jal connectivity
+	add $4 , $17 , $0 # expanded move: move $4 , $17
+	add $5 , $18 , $0 # expanded move: move $5 , $18
+	jal __outlined_spawn_15_0
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	lui $8 , 172 # li expansion: li $8 , 11272192
+	ori $8 , $8 , 0
+	ori $8 , $8 , 52192
+	addu $29 , $29 , $8
+	lw $31 , 32744 ( $29 )
+	lw $19 , 32740 ( $29 )
+	lw $18 , 32736 ( $29 )
+	lw $17 , 32732 ( $29 )
+	lw $16 , 32728 ( $29 )
+	addiu $29 , $29 , 32752
+	jr $31 # Returning from frunction main
+	.end main 
+ 	.size	main, .-main
+	.align	2
+	.globl __parallel_main
+	.size	__parallel_main, .-__parallel_main
+	.align	2
+	.globl __outlined_spawn_1_0
+	.ent __outlined_spawn_1_0 
+ __outlined_spawn_1_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	addi $2 , $0 , 13097 # li expansion: li $2 , 13097
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_1_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lui $3 , 1 # la expansion: la $3 , degrees
+	ori $3 , $3 , 55876
+	addu $2 , $2 , $3
+	lw $5 , 0 ( $2 )
+	add $6 , $0 , $0 # expanded move: move $6 , $0
+	add $4 , $0 , $0 # expanded move: move $4 , $0
+	sll $3 , $27 , 2
+	lui $2 , 1 # la expansion: la $2 , vertices
+	ori $2 , $2 , 3480
+	addu $3 , $3 , $2
+	lui $7 , 125 # la expansion: la $7 , T
+	ori $7 , $7 , 64364
+	beq $0 , $0 , $L107_0
+$L108 :
+	lw $2 , 0 ( $3 )
+	addu $2 , $4 , $2
+	sll $2 , $2 , 2
+	addu $2 , $2 , $7
+	lw $2 , 0 ( $2 )
+	beq $2 , $0 , $L109
+	addiu $6 , $6 , 1
+$L109 :
+	addiu $4 , $4 , 1
+$L107_0 :
+	slt $2 , $4 , $5
+	bne $2 , $0 , $L108
+	sll $2 , $27 , 2
+	lui $3 , 0 # la expansion: la $3 , new_degrees
+	ori $3 , $3 , 10560
+	addu $2 , $2 , $3
+	swp $6 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_1_0
+	join32
+_xmt_spawnjoinend_1_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_1
+	.end __outlined_spawn_1_0 
+ 	.size	__outlined_spawn_1, .-__outlined_spawn_1
+	.align	2
+	.globl __outlined_spawn_2_0
+	.ent __outlined_spawn_2_0 
+ __outlined_spawn_2_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	addi $2 , $0 , 13097 # li expansion: li $2 , 13097
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_2_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lui $3 , 1 # la expansion: la $3 , degrees
+	ori $3 , $3 , 55876
+	addu $2 , $2 , $3
+	lw $6 , 0 ( $2 )
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	sll $5 , $27 , 2
+	lui $7 , 125 # la expansion: la $7 , T
+	ori $7 , $7 , 64364
+	add $8 , $5 , $0 # expanded move: move $8 , $5
+	beq $0 , $0 , $L114_0
+$L115_0 :
+	lui $4 , 1 # la expansion: la $4 , vertices
+	ori $4 , $4 , 3480
+	addu $2 , $5 , $4
+	lw $2 , 0 ( $2 )
+	addu $2 , $3 , $2
+	sll $2 , $2 , 2
+	addu $2 , $2 , $7
+	lw $2 , 0 ( $2 )
+	beq $2 , $0 , $L116_0
+	addu $2 , $8 , $4
+	lw $2 , 0 ( $2 )
+	addu $2 , $3 , $2
+	sll $2 , $2 , 2
+	lui $3 , 154 # la expansion: la $3 , T_comp
+	ori $3 , $3 , 56668
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	addiu $4 , $2 , - 1
+	beq $0 , $0 , $L118_0
+$L116_0 :
+	addiu $3 , $3 , 1
+$L114_0 :
+	slt $2 , $3 , $6
+	bne $2 , $0 , $L115_0
+	add $4 , $0 , $0 # expanded move: move $4 , $0
+$L118_0 :
+	sll $2 , $27 , 2
+	lui $3 , 241 # la expansion: la $3 , new_vertices
+	ori $3 , $3 , 33584
+	addu $2 , $2 , $3
+	swp $4 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_2_0
+	join32
+_xmt_spawnjoinend_2_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_2
+	.end __outlined_spawn_2_0 
+ 	.size	__outlined_spawn_2, .-__outlined_spawn_2
+	.align	2
+	.globl __outlined_spawn_3_0
+	.ent __outlined_spawn_3_0 
+ __outlined_spawn_3_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	lui $2 , 7 # li expansion: li $2 , 458752
+	ori $2 , $2 , 0
+	ori $2 , $2 , 14459
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_3_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lui $3 , 125 # la expansion: la $3 , T
+	ori $3 , $3 , 64364
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	beq $2 , $0 , $L122_0
+	lui $6 , 154 # la expansion: la $6 , T_comp
+	ori $6 , $6 , 56668
+	sll $2 , $27 , 2
+	addu $2 , $2 , $6
+	lw $3 , 0 ( $2 )
+	lui $5 , 183 # la expansion: la $5 , new_edges
+	ori $5 , $5 , 48972
+	sll $3 , $3 , 3
+	addu $3 , $3 , $5
+	lui $4 , 2 # la expansion: la $4 , edges
+	ori $4 , $4 , 42736
+	sll $2 , $27 , 3
+	addu $2 , $2 , $4
+	lw $2 , 0 ( $2 )
+	swp $2 , - 8 ( $3 )
+	sll $2 , $27 , 2
+	addu $2 , $2 , $6
+	lw $3 , 0 ( $2 )
+	sll $3 , $3 , 3
+	addu $3 , $3 , $5
+	sll $2 , $27 , 3
+	addu $2 , $2 , $4
+	lw $2 , 4 ( $2 )
+	swp $2 , - 4 ( $3 )
+$L122_0 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_3_0
+	join32
+_xmt_spawnjoinend_3_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_3
+	.end __outlined_spawn_3_0 
+ 	.size	__outlined_spawn_3, .-__outlined_spawn_3
+	.align	2
+	.globl __outlined_spawn_4_0
+	.ent __outlined_spawn_4_0 
+ __outlined_spawn_4_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	lui $2 , 7 # li expansion: li $2 , 458752
+	ori $2 , $2 , 0
+	ori $2 , $2 , 14459
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_4_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lui $3 , 125 # la expansion: la $3 , T
+	ori $3 , $3 , 64364
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	beq $2 , $0 , $L126_1
+	lui $5 , 154 # la expansion: la $5 , T_comp
+	ori $5 , $5 , 56668
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	lw $4 , 0 ( $2 )
+	sll $4 , $4 , 2
+	lui $2 , 242 # la expansion: la $2 , new_antiparallel
+	ori $2 , $2 , 20440
+	addu $4 , $4 , $2
+	sll $2 , $27 , 2
+	lui $3 , 60 # la expansion: la $3 , antiparallel
+	ori $3 , $3 , 27352
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	lw $2 , 0 ( $2 )
+	addiu $2 , $2 , - 1
+	swp $2 , - 4 ( $4 )
+$L126_1 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_4_0
+	join32
+_xmt_spawnjoinend_4_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_4
+	.end __outlined_spawn_4_0 
+ 	.size	__outlined_spawn_4, .-__outlined_spawn_4
+	.align	2
+	.globl __outlined_spawn_5_0
+	.ent __outlined_spawn_5_0 
+ __outlined_spawn_5_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	addiu $4 , $4 , - 1
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $4
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_5_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	lui $8 , 183 # la expansion: la $8 , new_edges
+	ori $8 , $8 , 48972
+	sll $2 , $27 , 3
+	addu $2 , $2 , $8
+	lw $2 , 4 ( $2 )
+	sll $2 , $2 , 2
+	lui $3 , 241 # la expansion: la $3 , new_vertices
+	ori $3 , $3 , 33584
+	addu $2 , $2 , $3
+	lw $6 , 0 ( $2 )
+	sll $7 , $27 , 2
+	lui $2 , 271 # la expansion: la $2 , next_D_1
+	ori $2 , $2 , 12744
+	addu $7 , $7 , $2
+	sll $2 , $27 , 2
+	lui $3 , 242 # la expansion: la $3 , new_antiparallel
+	ori $3 , $3 , 20440
+	addu $2 , $2 , $3
+	lw $4 , 0 ( $2 )
+	subu $4 , $4 , $6
+	addiu $4 , $4 , 1
+	sll $5 , $27 , 3
+	addu $5 , $5 , $8
+	lw $2 , 4 ( $5 )
+	sll $2 , $2 , 2
+	lui $3 , 0 # la expansion: la $3 , new_degrees
+	ori $3 , $3 , 10560
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	div $4 , $2
+	mfhi $2
+	addu $6 , $6 , $2
+	swp $6 , 0 ( $7 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_5_0
+	join32
+_xmt_spawnjoinend_5_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_5
+	.end __outlined_spawn_5_0 
+ 	.size	__outlined_spawn_5, .-__outlined_spawn_5
+	.align	2
+	.globl __outlined_spawn_6_0
+	.ent __outlined_spawn_6_0 
+ __outlined_spawn_6_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	addiu $4 , $4 , - 1
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $4
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_6_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lui $4 , 300 # la expansion: la $4 , next_D_2
+	ori $4 , $4 , 5048
+	addu $4 , $2 , $4
+	lui $3 , 271 # la expansion: la $3 , next_D_1
+	ori $3 , $3 , 12744
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	swp $2 , 0 ( $4 )
+	sll $2 , $27 , 2
+	lui $3 , 328 # la expansion: la $3 , R
+	ori $3 , $3 , 62888
+	addu $2 , $2 , $3
+	addi $3 , $0 , 1 # li expansion: li $3 , 1
+	swp $3 , 0 ( $2 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_6_0
+	join32
+_xmt_spawnjoinend_6_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_6
+	.end __outlined_spawn_6_0 
+ 	.size	__outlined_spawn_6, .-__outlined_spawn_6
+	.align	2
+	.globl __outlined_spawn_7_0
+	.ent __outlined_spawn_7_0 
+ __outlined_spawn_7_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	addiu $4 , $4 , - 1
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $4
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_7_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	lui $5 , 357 # la expansion: la $5 , dir
+	ori $5 , $5 , 55192
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	swp $0 , 0 ( $2 )
+	lui $4 , 328 # la expansion: la $4 , R
+	ori $4 , $4 , 62888
+	sll $3 , $27 , 2
+	addu $3 , $3 , $4
+	lui $6 , 242 # la expansion: la $6 , new_antiparallel
+	ori $6 , $6 , 20440
+	sll $2 , $27 , 2
+	addu $2 , $2 , $6
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $4
+	pref 8 , 0 ( $3 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $3 , 0 ( $3 )
+	lw $2 , 0 ( $2 )
+	slt $3 , $3 , $2
+	beq $3 , $0 , $L134
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	addi $3 , $0 , 1 # li expansion: li $3 , 1
+	swp $3 , 0 ( $2 )
+	sll $2 , $27 , 3
+	lui $3 , 183 # la expansion: la $3 , new_edges
+	ori $3 , $3 , 48972
+	addu $2 , $2 , $3
+	lw $3 , 0 ( $2 )
+	sll $3 , $3 , 2
+	lui $2 , 389 # la expansion: la $2 , edges_idx
+	ori $2 , $2 , 8064
+	addu $3 , $3 , $2
+	sll $2 , $27 , 2
+	addu $2 , $2 , $6
+	lw $2 , 0 ( $2 )
+	swp $2 , 0 ( $3 )
+$L134 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_7_0
+	join32
+_xmt_spawnjoinend_7_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_7
+	.end __outlined_spawn_7_0 
+ 	.size	__outlined_spawn_7, .-__outlined_spawn_7
+	.align	2
+	.globl __outlined_spawn_8_0
+	.ent __outlined_spawn_8_0 
+ __outlined_spawn_8_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	addiu $4 , $4 , - 1
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $4
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_8_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	lui $4 , 328 # la expansion: la $4 , R
+	ori $4 , $4 , 62888
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $0 , 0 ( $2 )
+	sll $2 , $27 , 2
+	lui $3 , 357 # la expansion: la $3 , dir
+	ori $3 , $3 , 55192
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	bne $2 , $0 , $L138
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	addi $3 , $0 , 1 # li expansion: li $3 , 1
+	swp $3 , 0 ( $2 )
+$L138 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_8_0
+	join32
+_xmt_spawnjoinend_8_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_8
+	.end __outlined_spawn_8_0 
+ 	.size	__outlined_spawn_8, .-__outlined_spawn_8
+	.align	2
+	.globl __outlined_spawn_9_0
+	.ent __outlined_spawn_9_0 
+ __outlined_spawn_9_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	addiu $4 , $4 , - 1
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $4
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_9_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lui $3 , 357 # la expansion: la $3 , dir
+	ori $3 , $3 , 55192
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	bne $2 , $0 , $L142
+	sll $2 , $27 , 3
+	lui $3 , 183 # la expansion: la $3 , new_edges
+	ori $3 , $3 , 48972
+	addu $2 , $2 , $3
+	lw $6 , 4 ( $2 )
+	sll $6 , $6 , 2
+	lui $3 , 387 # la expansion: la $3 , preorder
+	ori $3 , $3 , 34352
+	addu $3 , $6 , $3
+	lui $8 , 328 # la expansion: la $8 , R
+	ori $8 , $8 , 62888
+	sll $2 , $27 , 2
+	addu $2 , $2 , $8
+	lw $2 , 0 ( $2 )
+	addi $4 , $0 , 13099 # li expansion: li $4 , 13099
+	subu $4 , $4 , $2
+	swp $4 , 0 ( $3 )
+	lui $7 , 388 # la expansion: la $7 , size_subtree
+	ori $7 , $7 , 21208
+	addu $7 , $6 , $7
+	sll $5 , $27 , 2
+	addu $5 , $5 , $8
+	sll $2 , $27 , 2
+	lui $3 , 242 # la expansion: la $3 , new_antiparallel
+	ori $3 , $3 , 20440
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $8
+	pref 8 , 0 ( $5 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $3 , 0 ( $5 )
+	lw $2 , 0 ( $2 )
+	subu $3 , $3 , $2
+	swp $3 , 0 ( $7 )
+	lui $2 , 418 # la expansion: la $2 , low
+	ori $2 , $2 , 368
+	addu $2 , $6 , $2
+	swp $4 , 0 ( $2 )
+	lui $2 , 420 # la expansion: la $2 , high
+	ori $2 , $2 , 26472
+	addu $6 , $6 , $2
+	addu $4 , $4 , $3
+	addiu $4 , $4 , - 1
+	swp $4 , 0 ( $6 )
+$L142 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_9_0
+	join32
+_xmt_spawnjoinend_9_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_9
+	.end __outlined_spawn_9_0 
+ 	.size	__outlined_spawn_9, .-__outlined_spawn_9
+	.align	2
+	.globl __outlined_spawn_10_0
+	.ent __outlined_spawn_10_0 
+ __outlined_spawn_10_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	addi $2 , $0 , 13097 # li expansion: li $2 , 13097
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_10_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lui $3 , 1 # la expansion: la $3 , degrees
+	ori $3 , $3 , 55876
+	addu $2 , $2 , $3
+	lw $10 , 0 ( $2 )
+	add $4 , $0 , $0 # expanded move: move $4 , $0
+	lui $3 , 1 # la expansion: la $3 , vertices
+	ori $3 , $3 , 3480
+	sll $2 , $27 , 2
+	addu $11 , $2 , $3
+	lui $15 , 2 # la expansion: la $15 , edges
+	ori $15 , $15 , 42736
+	add $8 , $11 , $0 # expanded move: move $8 , $11
+	lui $9 , 125 # la expansion: la $9 , T
+	ori $9 , $9 , 64364
+	add $13 , $2 , $0 # expanded move: move $13 , $2
+	lui $14 , 387 # la expansion: la $14 , preorder
+	ori $14 , $14 , 34352
+	add $25 , $2 , $0 # expanded move: move $25 , $2
+	add $7 , $11 , $0 # expanded move: move $7 , $11
+	add $12 , $2 , $0 # expanded move: move $12 , $2
+	add $24 , $2 , $0 # expanded move: move $24 , $2
+	beq $0 , $0 , $L146
+$L147 :
+	lw $2 , 0 ( $11 )
+	addu $2 , $4 , $2
+	sll $2 , $2 , 3
+	addu $2 , $2 , $15
+	pref 8 , 4 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $8 ) # Inserted by ContinuousPrefetch
+	lw $5 , 4 ( $2 )
+	lw $2 , 0 ( $8 )
+	addu $2 , $4 , $2
+	sll $2 , $2 , 2
+	addu $2 , $2 , $9
+	lw $2 , 0 ( $2 )
+	bne $2 , $0 , $L148
+	lui $6 , 418 # la expansion: la $6 , low
+	ori $6 , $6 , 368
+	addu $2 , $13 , $6
+	sll $3 , $5 , 2
+	addu $3 , $3 , $14
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $3 ) # Inserted by ContinuousPrefetch
+	lw $2 , 0 ( $2 )
+	lw $3 , 0 ( $3 )
+	slt $2 , $3 , $2
+	beq $2 , $0 , $L148
+	addu $2 , $25 , $6
+	swp $3 , 0 ( $2 )
+$L148 :
+	lw $2 , 0 ( $7 )
+	addu $2 , $4 , $2
+	sll $2 , $2 , 2
+	addu $2 , $2 , $9
+	lw $2 , 0 ( $2 )
+	bne $2 , $0 , $L151
+	lui $6 , 420 # la expansion: la $6 , high
+	ori $6 , $6 , 26472
+	addu $2 , $12 , $6
+	sll $3 , $5 , 2
+	addu $3 , $3 , $14
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $3 ) # Inserted by ContinuousPrefetch
+	lw $2 , 0 ( $2 )
+	lw $3 , 0 ( $3 )
+	slt $2 , $2 , $3
+	beq $2 , $0 , $L151
+	addu $2 , $24 , $6
+	swp $3 , 0 ( $2 )
+$L151 :
+	addiu $4 , $4 , 1
+$L146 :
+	slt $2 , $4 , $10
+	bne $2 , $0 , $L147
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_10_0
+	join32
+_xmt_spawnjoinend_10_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_10
+	.end __outlined_spawn_10_0 
+ 	.size	__outlined_spawn_10, .-__outlined_spawn_10
+	.align	2
+	.globl __outlined_spawn_11_0
+	.ent __outlined_spawn_11_0 
+ __outlined_spawn_11_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	addi $2 , $0 , 13097 # li expansion: li $2 , 13097
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_11_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	lui $5 , 387 # la expansion: la $5 , preorder
+	ori $5 , $5 , 34352
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	lw $4 , 0 ( $2 )
+	sll $4 , $4 , 2
+	lui $2 , 422 # la expansion: la $2 , aux_low
+	ori $2 , $2 , 52576
+	addu $4 , $4 , $2
+	sll $2 , $27 , 2
+	lui $3 , 418 # la expansion: la $3 , low
+	ori $3 , $3 , 368
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	swp $2 , - 4 ( $4 )
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	lw $4 , 0 ( $2 )
+	sll $4 , $4 , 2
+	lui $2 , 425 # la expansion: la $2 , aux_high
+	ori $2 , $2 , 13144
+	addu $4 , $4 , $2
+	sll $2 , $27 , 2
+	lui $3 , 420 # la expansion: la $3 , high
+	ori $3 , $3 , 26472
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	swp $2 , - 4 ( $4 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_11_0
+	join32
+_xmt_spawnjoinend_11_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_11
+	.end __outlined_spawn_11_0 
+ 	.size	__outlined_spawn_11, .-__outlined_spawn_11
+	.align	2
+	.globl __outlined_spawn_12_0
+	.ent __outlined_spawn_12_0 
+ __outlined_spawn_12_0 :
+	.frame $29 , 32 , $31 # vars= 0, regs= 4/0, args= 16, gp= 0
+	.mask	0x80070000,-4
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	addiu $29 , $29 , - 20
+	sw $31 , 16 ( $29 )
+	sw $18 , 12 ( $29 )
+	sw $17 , 8 ( $29 )
+	sw $16 , 4 ( $29 )
+	addi $8 , $0 , 2048 # li expansion: li $8 , 2048
+	sll $8 , $8 , 6
+	subu $8 , $29 , $8
+	lui $28 , 125 # la expansion: la $28 , __xmt_global_sp
+	ori $28 , $28 , 11968
+	sw $8 , 0 ( $28 )
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	addi $2 , $0 , 13097 # li expansion: li $2 , 13097
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_12_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $30 , $0
+	#NO_APP
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30
+	subu $30 , $29 , $30
+	addiu $28 , $30 , - 2048
+	swp $28 , - 12 ( $30 )
+	addiu $29 , $30 , - 56
+	lui $3 , 387 # la expansion: la $3 , preorder
+	ori $3 , $3 , 34352
+	sll $2 , $27 , 2
+	addu $2 , $2 , $3
+	lw $17 , 0 ( $2 )
+	addiu $17 , $17 , - 1
+	add $4 , $2 , $0 # expanded move: move $4 , $2
+	sll $2 , $27 , 2
+	lui $3 , 388 # la expansion: la $3 , size_subtree
+	ori $3 , $3 , 21208
+	addu $2 , $2 , $3
+	pref 8 , 0 ( $4 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $16 , 0 ( $4 )
+	lw $2 , 0 ( $2 )
+	addu $16 , $16 , $2
+	addiu $16 , $16 , - 2
+	lui $4 , 422 # la expansion: la $4 , aux_low
+	ori $4 , $4 , 52576
+	addi $5 , $0 , 13098 # li expansion: li $5 , 13098
+	add $6 , $17 , $0 # expanded move: move $6 , $17
+	add $7 , $16 , $0 # expanded move: move $7 , $16
+	jal __XMT_fnin_42__parallel_query_range_min_int
+	add $18 , $2 , $0 # expanded move: move $18 , $2
+	lui $4 , 425 # la expansion: la $4 , aux_high
+	ori $4 , $4 , 13144
+	addi $5 , $0 , 13098 # li expansion: li $5 , 13098
+	add $6 , $17 , $0 # expanded move: move $6 , $17
+	add $7 , $16 , $0 # expanded move: move $7 , $16
+	jal __XMT_fnin_42__parallel_query_range_max_int
+	sll $3 , $27 , 2
+	lui $4 , 418 # la expansion: la $4 , low
+	ori $4 , $4 , 368
+	addu $3 , $3 , $4
+	swp $18 , 0 ( $3 )
+	sll $3 , $27 , 2
+	lui $4 , 420 # la expansion: la $4 , high
+	ori $4 , $4 , 26472
+	addu $3 , $3 , $4
+	swp $2 , 0 ( $3 )
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_12_0
+	j __XMT_fnin_join42 	# Inserted by FunctionInsertion
+__XMT_fnin_42__parallel_query_range_max_int :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	bne $6 , $7 , $__XMT_fnin_42L436
+	sll $2 , $7 , 2
+	addu $2 , $2 , $4
+	lw $11 , 0 ( $2 )
+	j $__XMT_fnin_42L438
+$__XMT_fnin_42L436 :
+	sll $2 , $6 , 2
+	sll $3 , $7 , 2
+	addu $2 , $2 , $4
+	addu $3 , $3 , $4
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $3 ) # Inserted by ContinuousPrefetch
+	lw $11 , 0 ( $2 )
+	lw $10 , 0 ( $3 )
+	addiu $6 , $6 , 1
+	addiu $7 , $7 , - 1
+	add $9 , $4 , $0 # expanded move: move $9 , $4
+	add $8 , $5 , $0 # expanded move: move $8 , $5
+	lui $2 , 32768 # li expansion: li $2 , - 2147483648
+	ori $2 , $2 , 0
+	ori $13 , $2 , 1
+	addi $14 , $0 , - 2 # li expansion: li $14 , - 2
+	addi $12 , $0 , 1 # li expansion: li $12 , 1
+	j $__XMT_fnin_42L439
+$__XMT_fnin_42L440 :
+	and $2 , $6 , $13
+	bgez $2 , $__XMT_fnin_42L442
+	addiu $2 , $2 , - 1
+	or $2 , $2 , $14
+	addiu $2 , $2 , 1
+$__XMT_fnin_42L442 :
+	bne $2 , $12 , $__XMT_fnin_42L441
+	sll $2 , $6 , 2
+	addu $2 , $9 , $2
+	lw $3 , 0 ( $2 )
+	slt $2 , $3 , $11
+	bne $2 , $0 , $__XMT_fnin_42L444
+	add $11 , $3 , $0 # expanded move: move $11 , $3
+$__XMT_fnin_42L444 :
+	addiu $6 , $6 , 1
+$__XMT_fnin_42L441 :
+	xori $2 , $7 , 1
+	andi $2 , $2 , 1
+	beq $2 , $0 , $__XMT_fnin_42L446
+	sll $2 , $7 , 2
+	addu $2 , $9 , $2
+	lw $3 , 0 ( $2 )
+	slt $2 , $10 , $3
+	beq $2 , $0 , $__XMT_fnin_42L448
+	add $10 , $3 , $0 # expanded move: move $10 , $3
+$__XMT_fnin_42L448 :
+	addiu $7 , $7 , - 1
+$__XMT_fnin_42L446 :
+	addiu $2 , $8 , 1
+	srl $3 , $6 , 31
+	srl $4 , $7 , 31
+	srl $5 , $2 , 31
+	addu $3 , $3 , $6
+	addu $4 , $4 , $7
+	addu $5 , $5 , $2
+	sll $2 , $8 , 2
+	addu $9 , $9 , $2
+	sra $6 , $3 , 1
+	sra $7 , $4 , 1
+	sra $8 , $5 , 1
+$__XMT_fnin_42L439 :
+	slt $2 , $7 , $6
+	beq $2 , $0 , $__XMT_fnin_42L440
+	slt $2 , $10 , $11
+	bne $2 , $0 , $__XMT_fnin_42L438
+	add $11 , $10 , $0 # expanded move: move $11 , $10
+$__XMT_fnin_42L438 :
+	add $2 , $11 , $0 # expanded move: move $2 , $11
+	jr $31 # Returning from frunction __parallel_query_range_max_int
+__XMT_fnin_42__parallel_query_range_min_int :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	bne $6 , $7 , $__XMT_fnin_42L371
+	sll $2 , $7 , 2
+	addu $2 , $2 , $4
+	lw $11 , 0 ( $2 )
+	j $__XMT_fnin_42L373
+$__XMT_fnin_42L371 :
+	sll $2 , $6 , 2
+	sll $3 , $7 , 2
+	addu $2 , $2 , $4
+	addu $3 , $3 , $4
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $3 ) # Inserted by ContinuousPrefetch
+	lw $11 , 0 ( $2 )
+	lw $10 , 0 ( $3 )
+	addiu $6 , $6 , 1
+	addiu $7 , $7 , - 1
+	add $9 , $4 , $0 # expanded move: move $9 , $4
+	add $8 , $5 , $0 # expanded move: move $8 , $5
+	lui $2 , 32768 # li expansion: li $2 , - 2147483648
+	ori $2 , $2 , 0
+	ori $13 , $2 , 1
+	addi $14 , $0 , - 2 # li expansion: li $14 , - 2
+	addi $12 , $0 , 1 # li expansion: li $12 , 1
+	j $__XMT_fnin_42L374
+$__XMT_fnin_42L375 :
+	and $2 , $6 , $13
+	bgez $2 , $__XMT_fnin_42L377
+	addiu $2 , $2 , - 1
+	or $2 , $2 , $14
+	addiu $2 , $2 , 1
+$__XMT_fnin_42L377 :
+	bne $2 , $12 , $__XMT_fnin_42L376
+	sll $2 , $6 , 2
+	addu $2 , $9 , $2
+	lw $3 , 0 ( $2 )
+	slt $2 , $11 , $3
+	bne $2 , $0 , $__XMT_fnin_42L379
+	add $11 , $3 , $0 # expanded move: move $11 , $3
+$__XMT_fnin_42L379 :
+	addiu $6 , $6 , 1
+$__XMT_fnin_42L376 :
+	xori $2 , $7 , 1
+	andi $2 , $2 , 1
+	beq $2 , $0 , $__XMT_fnin_42L381
+	sll $2 , $7 , 2
+	addu $2 , $9 , $2
+	lw $3 , 0 ( $2 )
+	slt $2 , $3 , $10
+	beq $2 , $0 , $__XMT_fnin_42L383
+	add $10 , $3 , $0 # expanded move: move $10 , $3
+$__XMT_fnin_42L383 :
+	addiu $7 , $7 , - 1
+$__XMT_fnin_42L381 :
+	addiu $2 , $8 , 1
+	srl $3 , $6 , 31
+	srl $4 , $7 , 31
+	srl $5 , $2 , 31
+	addu $3 , $3 , $6
+	addu $4 , $4 , $7
+	addu $5 , $5 , $2
+	sll $2 , $8 , 2
+	addu $9 , $9 , $2
+	sra $6 , $3 , 1
+	sra $7 , $4 , 1
+	sra $8 , $5 , 1
+$__XMT_fnin_42L374 :
+	slt $2 , $7 , $6
+	beq $2 , $0 , $__XMT_fnin_42L375
+	slt $2 , $11 , $10
+	bne $2 , $0 , $__XMT_fnin_42L373
+	add $11 , $10 , $0 # expanded move: move $11 , $10
+$__XMT_fnin_42L373 :
+	add $2 , $11 , $0 # expanded move: move $2 , $11
+	jr $31 # Returning from frunction __parallel_query_range_min_int
+__XMT_fnin_join42 : 	# Inserted by FunctionInsertion
+	join32
+_xmt_spawnjoinend_12_0 : # join expansion (regular) end
+	#NO_APP
+	lw $31 , 16 ( $29 )
+	lw $18 , 12 ( $29 )
+	lw $17 , 8 ( $29 )
+	lw $16 , 4 ( $29 )
+	addiu $29 , $29 , 20
+	jr $31 # Returning from frunction __outlined_spawn_12
+	.end __outlined_spawn_12_0 
+ 	.size	__outlined_spawn_12, .-__outlined_spawn_12
+	.align	2
+	.globl __outlined_spawn_13_0
+	.ent __outlined_spawn_13_0 
+ __outlined_spawn_13_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $2 , $0 , $0 # expanded move: move $2 , $0
+	addiu $4 , $4 , - 1
+	#APP
+	getid $27 , $2 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $4
+	spawn32
+	broadh $2 , $2
+	broadl $2 , $2
+	getid $27 , $2
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_13_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $4 , $4
+	broadl $4 , $4
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lui $3 , 357 # la expansion: la $3 , dir
+	ori $3 , $3 , 55192
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	bne $2 , $0 , $L161
+	addi $3 , $0 , 1 # li expansion: li $3 , 1
+	#APP
+	sflush
+	ps $3 , $g0
+	#NO_APP
+	sll $2 , $27 , 2
+	addu $2 , $2 , $5
+	swp $3 , 0 ( $2 )
+$L161 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_13_0
+	join32
+_xmt_spawnjoinend_13_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_13
+	.end __outlined_spawn_13_0 
+ 	.size	__outlined_spawn_13, .-__outlined_spawn_13
+	.align	2
+	.globl __outlined_spawn_14_0
+	.ent __outlined_spawn_14_0 
+ __outlined_spawn_14_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $11 , $4 , $0 # expanded move: move $11 , $4
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	lui $2 , 7 # li expansion: li $2 , 458752
+	ori $2 , $2 , 0
+	ori $2 , $2 , 14459
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_14_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $11 , $11
+	broadl $11 , $11
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	lui $3 , 2 # la expansion: la $3 , edges
+	ori $3 , $3 , 42736
+	sll $2 , $27 , 3
+	addu $2 , $2 , $3
+	lw $7 , 0 ( $2 )
+	sll $2 , $27 , 3
+	addu $2 , $2 , $3
+	lw $8 , 4 ( $2 )
+	sll $2 , $27 , 2
+	lui $3 , 125 # la expansion: la $3 , T
+	ori $3 , $3 , 64364
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	bne $2 , $0 , $L165
+	slt $2 , $7 , $8
+	beq $2 , $0 , $L167_0
+	lui $3 , 387 # la expansion: la $3 , preorder
+	ori $3 , $3 , 34352
+	sll $6 , $7 , 2
+	addu $4 , $6 , $3
+	sll $2 , $8 , 2
+	addu $2 , $2 , $3
+	pref 8 , 0 ( $4 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $4 , 0 ( $4 )
+	lw $3 , 0 ( $2 )
+	slt $2 , $4 , $3
+	beq $2 , $0 , $L169
+	lui $2 , 388 # la expansion: la $2 , size_subtree
+	ori $2 , $2 , 21208
+	addu $2 , $6 , $2
+	lw $2 , 0 ( $2 )
+	addu $2 , $4 , $2
+	slt $2 , $3 , $2
+	bne $2 , $0 , $L167_0
+$L169 :
+	lui $3 , 387 # la expansion: la $3 , preorder
+	ori $3 , $3 , 34352
+	sll $6 , $8 , 2
+	addu $4 , $6 , $3
+	sll $2 , $7 , 2
+	addu $2 , $2 , $3
+	pref 8 , 0 ( $4 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $4 , 0 ( $4 )
+	lw $3 , 0 ( $2 )
+	slt $2 , $4 , $3
+	beq $2 , $0 , $L171_0
+	lui $2 , 388 # la expansion: la $2 , size_subtree
+	ori $2 , $2 , 21208
+	addu $2 , $6 , $2
+	lw $2 , 0 ( $2 )
+	addu $2 , $4 , $2
+	slt $2 , $3 , $2
+	bne $2 , $0 , $L167_0
+$L171_0 :
+	addi $3 , $0 , 1 # li expansion: li $3 , 1
+	#APP
+	sflush
+	ps $3 , $g0
+	#NO_APP
+	sll $3 , $3 , 3
+	addu $3 , $3 , $5
+	lui $4 , 389 # la expansion: la $4 , edges_idx
+	ori $4 , $4 , 8064
+	sll $2 , $7 , 2
+	addu $2 , $2 , $4
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $11
+	lw $2 , 0 ( $2 )
+	swp $2 , 0 ( $3 )
+	sll $2 , $8 , 2
+	addu $2 , $2 , $4
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $11
+	lw $2 , 0 ( $2 )
+	swp $2 , 4 ( $3 )
+	beq $0 , $0 , $L167_0
+$L165 :
+	sll $2 , $27 , 2
+	lui $3 , 125 # la expansion: la $3 , T
+	ori $3 , $3 , 64364
+	addu $2 , $2 , $3
+	lw $3 , 0 ( $2 )
+	addi $2 , $0 , 1 # li expansion: li $2 , 1
+	bne $3 , $2 , $L167_0
+	sll $2 , $27 , 2
+	lui $3 , 154 # la expansion: la $3 , T_comp
+	ori $3 , $3 , 56668
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	lui $3 , 357 # la expansion: la $3 , dir
+	ori $3 , $3 , 55192
+	addu $2 , $2 , $3
+	lw $2 , - 4 ( $2 )
+	bne $2 , $0 , $L167_0
+	sll $10 , $8 , 2
+	lui $2 , 418 # la expansion: la $2 , low
+	ori $2 , $2 , 368
+	addu $2 , $10 , $2
+	sll $9 , $7 , 2
+	lui $3 , 387 # la expansion: la $3 , preorder
+	ori $3 , $3 , 34352
+	addu $3 , $9 , $3
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $3 ) # Inserted by ContinuousPrefetch
+	lw $2 , 0 ( $2 )
+	lw $6 , 0 ( $3 )
+	slt $2 , $2 , $6
+	bne $2 , $0 , $L175_0
+	lui $4 , 420 # la expansion: la $4 , high
+	ori $4 , $4 , 26472
+	addu $4 , $10 , $4
+	lui $2 , 388 # la expansion: la $2 , size_subtree
+	ori $2 , $2 , 21208
+	addu $2 , $9 , $2
+	lw $3 , 0 ( $2 )
+	addu $3 , $6 , $3
+	lw $2 , 0 ( $4 )
+	slt $2 , $2 , $3
+	bne $2 , $0 , $L167_0
+$L175_0 :
+	addi $3 , $0 , 1 # li expansion: li $3 , 1
+	#APP
+	sflush
+	ps $3 , $g0
+	#NO_APP
+	sll $3 , $3 , 3
+	addu $3 , $3 , $5
+	lui $4 , 389 # la expansion: la $4 , edges_idx
+	ori $4 , $4 , 8064
+	sll $2 , $7 , 2
+	addu $2 , $2 , $4
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $11
+	lw $2 , 0 ( $2 )
+	swp $2 , 0 ( $3 )
+	sll $2 , $8 , 2
+	addu $2 , $2 , $4
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $11
+	lw $2 , 0 ( $2 )
+	swp $2 , 4 ( $3 )
+$L167_0 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_14_0
+	join32
+_xmt_spawnjoinend_14_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_14
+	.end __outlined_spawn_14_0 
+ 	.size	__outlined_spawn_14, .-__outlined_spawn_14
+	.align	2
+	.globl __outlined_spawn_15_0
+	.ent __outlined_spawn_15_0 
+ __outlined_spawn_15_0 :
+	.frame $29 , 0 , $31 # vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	add $26 , $29 , $0 # expanded move: move $26 , $sp
+	add $8 , $4 , $0 # expanded move: move $8 , $4
+	add $3 , $0 , $0 # expanded move: move $3 , $0
+	lui $2 , 7 # li expansion: li $2 , 458752
+	ori $2 , $2 , 0
+	ori $2 , $2 , 14459
+	#APP
+	getid $27 , $3 # spawn expansion (regular) start
+	mvtg $g6 , $27
+	mvtg $g7 , $2
+	spawn32
+	broadh $3 , $3
+	broadl $3 , $3
+	getid $27 , $3
+	broadh $29 , $29
+	broadl $29 , $29
+	getid $30 , $0
+	addi $28 , $0 , 2048 # li expansion: li $28 , 2048
+	mult $30 , $28
+	mflo $30 # $fp = TCUID*size
+	sub $30 , $29 , $30 # computing fp to initialize fp.childp
+	sw $0 , - 20 ( $30 ) # fp.childp = NULL
+_xmt_spawnStart_15_0 :
+	chkid $27 # spawn expansion (regular) end
+	broadh $30 , $30
+	broadl $30 , $30
+	broadh $29 , $29
+	broadl $29 , $29
+	broadh $26 , $26
+	broadl $26 , $26
+	broadh $8 , $8
+	broadl $8 , $8
+	broadh $5 , $5
+	broadl $5 , $5
+	broadh $3 , $3
+	broadl $3 , $3
+	broadh $2 , $2
+	broadl $2 , $2
+	#NO_APP
+	sll $2 , $27 , 2
+	lui $3 , 125 # la expansion: la $3 , T
+	ori $3 , $3 , 64364
+	addu $2 , $2 , $3
+	lw $3 , 0 ( $2 )
+	addi $2 , $0 , 1 # li expansion: li $2 , 1
+	bne $3 , $2 , $L179_0
+	lui $4 , 154 # la expansion: la $4 , T_comp
+	ori $4 , $4 , 56668
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	lui $3 , 357 # la expansion: la $3 , dir
+	ori $3 , $3 , 55192
+	addu $2 , $2 , $3
+	lw $2 , - 4 ( $2 )
+	bne $2 , $0 , $L179_0
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $8
+	lw $2 , - 4 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	lw $5 , 0 ( $2 )
+	lui $4 , 89 # la expansion: la $4 , bcc
+	ori $4 , $4 , 19660
+	sll $2 , $27 , 2
+	addu $2 , $2 , $4
+	swp $5 , 0 ( $2 )
+	sll $2 , $27 , 2
+	lui $3 , 60 # la expansion: la $3 , antiparallel
+	ori $3 , $3 , 27352
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $4
+	swp $5 , 0 ( $2 )
+	beq $0 , $0 , $L182_0
+$L179_0 :
+	sll $2 , $27 , 2
+	lui $3 , 125 # la expansion: la $3 , T
+	ori $3 , $3 , 64364
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	bne $2 , $0 , $L182_0
+	lui $6 , 2 # la expansion: la $6 , edges
+	ori $6 , $6 , 42736
+	sll $2 , $27 , 3
+	addu $2 , $2 , $6
+	lw $7 , 0 ( $2 )
+	sll $2 , $27 , 3
+	addu $2 , $2 , $6
+	lw $3 , 4 ( $2 )
+	lui $4 , 387 # la expansion: la $4 , preorder
+	ori $4 , $4 , 34352
+	sll $3 , $3 , 2
+	addu $3 , $3 , $4
+	sll $2 , $7 , 2
+	addu $2 , $2 , $4
+	pref 8 , 0 ( $3 ) # Inserted by ContinuousPrefetch
+	pref 8 , 0 ( $2 ) # Inserted by ContinuousPrefetch
+	lw $3 , 0 ( $3 )
+	lw $2 , 0 ( $2 )
+	slt $3 , $2 , $3
+	beq $3 , $0 , $L184_0
+	sll $2 , $27 , 3
+	addu $2 , $2 , $6
+	lw $7 , 4 ( $2 )
+$L184_0 :
+	sll $4 , $27 , 2
+	lui $2 , 89 # la expansion: la $2 , bcc
+	ori $2 , $2 , 19660
+	addu $4 , $4 , $2
+	sll $2 , $7 , 2
+	lui $3 , 389 # la expansion: la $3 , edges_idx
+	ori $3 , $3 , 8064
+	addu $2 , $2 , $3
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $8
+	lw $2 , 0 ( $2 )
+	sll $2 , $2 , 2
+	addu $2 , $2 , $5
+	lw $2 , 0 ( $2 )
+	swp $2 , 0 ( $4 )
+$L182_0 :
+	#APP
+	addi $27 , $0 , 1 # join expansion (regular) start
+	ps $27 , $g6
+	blez $0 , _xmt_spawnStart_15_0
+	join32
+_xmt_spawnjoinend_15_0 : # join expansion (regular) end
+	#NO_APP
+	jr $31 # Returning from frunction __outlined_spawn_15
+	.end __outlined_spawn_15_0 
+ 	.size	__outlined_spawn_15, .-__outlined_spawn_15
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	.ident	"GCC: (GNU) 4.0.2"
+	.globl pop_stacklet
+	.size	pop_stacklet, . -pop_stacklet
+	.align 2
